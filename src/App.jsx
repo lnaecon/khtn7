@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AlertCircle, CheckCircle, MapPin, Ship, Book } from 'lucide-react';
+import { AlertCircle, CheckCircle, MapPin, Ship, Book, Globe, Coins, Users, Building, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader } from './components/ui/card';
 import { Button } from './components/ui/button'; // Keep this one
 import './App.css';

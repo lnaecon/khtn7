@@ -5,7 +5,7 @@ body {
   background: url('https://www.publicdomainpictures.net/pictures/320000/velka/old-parchment-paper.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Georgia', serif;
-  color: #333;
+  color: #2F4F2F;
   animation: fadeIn 1s ease-in-out; /* Adds a fade-in effect */
 }
 
@@ -18,39 +18,26 @@ body {
   }
 }
 
-
 h1 {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: #4A3F35;
+  color: #2F5F2F; /* Dark green for headers */
 }
 
 h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #4A3F35;
+  color: #2F5F2F;
 }
 
 .button {
-  background-color: #f0e6d6;
-  border: 2px solid #d4c4a8;
+  background-color: #D8F0D8; /* Light green background */
+  border: 2px solid #B2D6B2; /* Softer green border */
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 1.2rem;
-  color: #4A3F35;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 10px;
-}
-
-.button {
-  background-color: #f0e6d6;
-  border: 2px solid #d4c4a8;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  color: #4A3F35;
+  color: #2F5F2F; /* Dark green for text */
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 10px;
@@ -58,12 +45,11 @@ h2 {
 }
 
 .button:hover {
-  background-color: #e0d1b5;
-  color: #333;
+  background-color: #C6E8C6; /* Slightly darker green on hover */
+  color: #1F4F1F; /* Darker green for hover text */
   transform: translateY(-2px); /* Adds a 'lift' effect */
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Adds more shadow on hover */
 }
-
 
 .space-y-4 > * + * {
   margin-top: 15px;
@@ -71,7 +57,7 @@ h2 {
 
 .card {
   background: rgba(255, 255, 255, 0.85);
-  border: 2px solid #d4c4a8;
+  border: 2px solid #B2D6B2; /* Softer green for the card border */
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -83,20 +69,18 @@ h2 {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
 }
 
-
 .icon {
   font-size: 2rem;
-  color: #4A3F35;
+  color: #2F5F2F; /* Dark green for icons */
   margin-right: 10px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icon:hover {
   transform: scale(1.1); /* Slightly increases the size */
-  color: #5A3F35; /* Slightly changes color */
+  color: #3F6F3F; /* Slightly changes to a darker green */
 }
 
 .button:active {
   transform: scale(0.98); /* Makes the button shrink slightly on click */
 }
-

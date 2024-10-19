@@ -12,7 +12,6 @@ import {
   CalendarDays,
   Droplet,
   Ruler,
-  Heart,
   Leaf,
   Mountain,
   Clock 
@@ -340,6 +339,7 @@ const QuizDashboard = () => {
         </div>
       )}
 
+
       <Card className="w-full max-w-3xl bg-white/80 backdrop-blur-sm shadow-xl z-0">
         <CardHeader className="text-center">
           <h1 className="text-3xl font-bold text-gray-800 mb-4">Địa lý Lớp 7: Ôn Tập Kiến Thức</h1>
@@ -391,8 +391,6 @@ const QuizDashboard = () => {
           )}
         </CardContent>
       </Card>
-      <div/>
-      </div>
     </div>
   );
 };

@@ -12,6 +12,7 @@ import {
   CalendarDays,
   Droplet,
   Ruler,
+  Heart,
   Leaf,
   Mountain,
   Clock 
@@ -41,7 +42,7 @@ const quizData = [
       { text: "27", isCorrect: true, explanation: "✅ Chính xác! EU 2020 là một gia đình 27 thành viên." },
       { text: "28", isCorrect: false, explanation: "❌ Hơi dư 1 \"ngôi sao\" sau khi UK \"rời bữa tiệc\" (Brexit)." }
     ],
-    historicalContext: "🇭🇷 Croatia là \"em út\" của EU, gia nhập \"gia đình\" năm 2013 với tư cách thành viên thứ 28!"
+    historicalContext: "🇭🇷 Croatia là \"em út\" của EU, gia nhập \"gia đình\" năm 2013!"
   },
   {
     question: "💰 GDP của EU năm 2020 là bao nhiêu?",
@@ -339,7 +340,6 @@ const QuizDashboard = () => {
         </div>
       )}
 
-
       <Card className="w-full max-w-3xl bg-white/80 backdrop-blur-sm shadow-xl z-0">
         <CardHeader className="text-center">
           <h1 className="text-3xl font-bold text-gray-800 mb-4">Địa lý Lớp 7: Ôn Tập Kiến Thức</h1>
@@ -391,6 +391,9 @@ const QuizDashboard = () => {
           )}
         </CardContent>
       </Card>
+      <div className="absolute bottom-4 right-4 text-gray-600 text-sm flex items-center">
+        Made in 1A with <Heart className="w-4 h-4 ml-1 text-red-500 inline-block" />
+      </div>
     </div>
   );
 };

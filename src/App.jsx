@@ -9,6 +9,7 @@ import {
   Coins, 
   Users, 
   Building, 
+  CalendarDays,
   Clock 
 } from 'lucide-react';
 import { Card, CardContent, CardHeader } from './components/ui/card';
@@ -17,28 +18,38 @@ import './App.css';
 
 const quizData = [
   {
-    question: "Ai là người dẫn đầu đoàn thám hiểm hoàn thành chuyến đi đường biển vòng quanh thế giới từ năm 1519-1522?",
-    icon: <Ship className="text-blue-500" />,
+    question: "🎂 EU được thành lập chính thức vào năm nào?",
+    icon: <CalendarDays className="text-blue-500" />, // Use CalendarDays instead of Calendar
     answers: [
-      { text: "Ma-ghien-lăng", isCorrect: true, explanation: "Đúng! Ma-ghien-lăng dẫn đầu đoàn thám hiểm này. 🎉" },
-      { text: "Cô-lôm-bô", isCorrect: false, explanation: "Sai rồi. Cô-lôm-bô phát hiện châu Mỹ năm 1492. 😕" },
-      { text: "Đi-a-xơ", isCorrect: false, explanation: "Không đúng. Đi-a-xơ đến mũi Hảo Vọng năm 1487. 😔" },
-      { text: "Va-xcô đơ Ga-ma", isCorrect: false, explanation: "Sai. Ga-ma tìm ra đường biển đến Ấn Độ năm 1497-1498. 😞" }
+      { text: "1991", isCorrect: false, explanation: "❌ EU chưa \"chào đời\" năm này." },
+      { text: "1992", isCorrect: false, explanation: "❌ Gần lắm rồi, nhưng chưa đúng!" },
+      { text: "1993", isCorrect: true, explanation: "✅ Bingo! EU chính thức ra mắt ngày 1/11/1993." },
+      { text: "1994", isCorrect: false, explanation: "❌ Muộn mất rồi, EU đã \"lớn\" hơn 1 tuổi rồi." }
     ],
-    historicalContext: "Ma-ghien-lăng đã không sống sót để hoàn thành chuyến đi. Ông bị giết ở Philippines năm 1521, nhưng đoàn thám hiểm của ông vẫn tiếp tục và hoàn thành chuyến đi vòng quanh thế giới. 🌍🚢"
+    historicalContext: "👶 Tiền thân của EU là \"em bé\" Cộng đồng Than và Thép châu Âu, sinh năm 1951 với 6 \"ông bố bà mẹ\" sáng lập!"
   },
   {
-    question: "Hệ quả nào sau đây KHÔNG phải là kết quả của các cuộc phát kiến địa lí? 🌎🧭",
-    icon: <Globe className="text-green-500" />,
+    question: "🌟 Năm 2020, EU có bao nhiêu quốc gia thành viên?",
+    icon: <Globe className="text-green-500" />, // 'Globe' is already imported, no need to import again
     answers: [
-      { text: "Mở ra con đường mới", isCorrect: false, explanation: "Sai - Đây là hệ quả của phát kiến địa lí. 🛣️" },
-      { text: "Thúc đẩy hàng hải quốc tế", isCorrect: false, explanation: "Sai - Đây là hệ quả của phát kiến địa lí. ⛵" },
-      { text: "Chấm dứt chế độ nô lệ", isCorrect: true, explanation: "Đúng - Phát kiến địa lí thực tế dẫn đến nạn buôn bán nô lệ. 🔗" },
-      { text: "Bắt đầu xâm chiếm thuộc địa", isCorrect: false, explanation: "Sai - Đây là hệ quả của phát kiến địa lí. 🏴‍☠️" }
+      { text: "25", isCorrect: false, explanation: "❌ Thiếu mất 2 \"ngôi sao\" rồi!" },
+      { text: "26", isCorrect: false, explanation: "❌ Gần đúng, nhưng còn thiếu 1 nước." },
+      { text: "27", isCorrect: true, explanation: "✅ Chính xác! EU 2020 là một gia đình 27 thành viên." },
+      { text: "28", isCorrect: false, explanation: "❌ Hơi dư 1 \"ngôi sao\" sau khi UK \"rời bữa tiệc\" (Brexit)." }
     ],
-    historicalContext: "Mặc dù các cuộc phát kiến địa lí mang lại nhiều lợi ích, chúng cũng gây ra nhiều hậu quả tiêu cực. Ví dụ, ước tính có khoảng 12 triệu người châu Phi đã bị bắt làm nô lệ và vận chuyển sang châu Mỹ trong suốt thời kỳ buôn bán nô lệ xuyên Đại Tây Dương. 😔🌍"
+    historicalContext: "🇭🇷 Croatia là \"em út\" của EU, gia nhập \"gia đình\" năm 2013 với tư cách thành viên thứ 28!"
   },
-  // ... có thể thêm các câu hỏi khác ở đây
+  {
+    question: "💰 GDP của EU năm 2020 là bao nhiêu?",
+    icon: <Coins className="text-yellow-500" />, // Use the Coins icon from lucide-react
+    answers: [
+      { text: "14.723 tỷ USD", isCorrect: false, explanation: "❌ Số này thuộc về \"anh hàng xóm\" Trung Quốc năm 2020." },
+      { text: "15.276 tỷ USD", isCorrect: true, explanation: "✅ Chính xác! Đây là \"kho báu\" của EU năm 2020." },
+      { text: "20.937 tỷ USD", isCorrect: false, explanation: "❌ Wow, số này của \"đại gia\" Hoa Kỳ đấy!" },
+      { text: "4.975 tỷ USD", isCorrect: false, explanation: "❌ Hơi ít, đây là GDP của Nhật Bản năm 2020." }
+    ],
+    historicalContext: "🇩🇪 Đức là \"ông trùm\" kinh tế EU, đóng góp 1/4 tổng GDP của cả nhóm!"
+  }
 ];
 
 const QuizDashboard = () => {

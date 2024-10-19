@@ -391,7 +391,7 @@ const QuizDashboard = () => {
           )}
         </CardContent>
       </Card>
-      <div className="absolute bottom-4 right-4 text-gray-600 text-sm flex items-center">
+      <div className="absolute top-4 right-4 text-gray-600 text-sm flex items-center">
         Made in 1A with <Heart className="w-4 h-4 ml-1 text-red-500 inline-block" />
       </div>
     </div>

@@ -25,10 +25,10 @@ const quizData = [
     question: "🎂 EU được thành lập chính thức vào năm nào?",
     icon: <CalendarDays className="text-blue-500" />,
     answers: [
-      { label: "A", text: "1991", isCorrect: false, explanation: "A: ❌ EU chưa \"chào đời\" năm này." },
-      { label: "B", text: "1992", isCorrect: false, explanation: "B: ❌ Gần lắm rồi, nhưng chưa đúng!" },
-      { label: "C", text: "1993", isCorrect: true, explanation: "C: ✅ Bingo! EU chính thức ra mắt ngày 1/11/1993." },
-      { label: "D", text: "1994", isCorrect: false, explanation: "D: ❌ Muộn mất rồi, EU đã \"lớn\" hơn 1 tuổi rồi." }
+      { text: "A. 1991", isCorrect: false, explanation: "A: ❌ EU chưa \"chào đời\" năm này." },
+      { text: "B. 1992", isCorrect: false, explanation: "B: ❌ Gần lắm rồi, nhưng chưa đúng!" },
+      { text: "C. 1993", isCorrect: true, explanation: "C: ✅ Bingo! EU chính thức ra mắt ngày 1/11/1993." },
+      { text: "D. 1994", isCorrect: false, explanation: "D: ❌ Muộn mất rồi, EU đã \"lớn\" hơn 1 tuổi rồi." }
     ],
     historicalContext: "👶 Tiền thân của EU là \"em bé\" Cộng đồng Than và Thép châu Âu, sinh năm 1951 với 6 \"ông bố bà mẹ\" sáng lập!"
   },
@@ -36,10 +36,10 @@ const quizData = [
     question: "🌟 Năm 2020, EU có bao nhiêu quốc gia thành viên?",
     icon: <Globe className="text-green-500" />,
     answers: [
-      { label: "A", text: "25", isCorrect: false, explanation: "A: ❌ Thiếu mất 2 \"ngôi sao\" rồi!" },
-      { label: "B", text: "26", isCorrect: false, explanation: "B: ❌ Gần đúng, nhưng còn thiếu 1 nước." },
-      { label: "C", text: "27", isCorrect: true, explanation: "C: ✅ Chính xác! EU 2020 là một gia đình 27 thành viên." },
-      { label: "D", text: "28", isCorrect: false, explanation: "D: ❌ Hơi dư 1 \"ngôi sao\" sau khi UK \"rời bữa tiệc\" (Brexit)." }
+      { text: "A. 25", isCorrect: false, explanation: "A: ❌ Thiếu mất 2 \"ngôi sao\" rồi!" },
+      { text: "B. 26", isCorrect: false, explanation: "B: ❌ Gần đúng, nhưng còn thiếu 1 nước." },
+      { text: "C. 27", isCorrect: true, explanation: "C: ✅ Chính xác! EU 2020 là một gia đình 27 thành viên." },
+      { text: "D. 28", isCorrect: false, explanation: "D: ❌ Hơi dư 1 \"ngôi sao\" sau khi UK \"rời bữa tiệc\" (Brexit)." }
     ],
     historicalContext: "🇭🇷 Croatia là \"em út\" của EU, gia nhập \"gia đình\" năm 2013!"
   },
@@ -47,10 +47,10 @@ const quizData = [
     question: "💰 GDP của EU năm 2020 là bao nhiêu?",
     icon: <Coins className="text-yellow-500" />,
     answers: [
-      { label: "A", text: "14.723 tỷ USD", isCorrect: false, explanation: "A: ❌ Số này thuộc về \"anh hàng xóm\" Trung Quốc năm 2020." },
-      { label: "B", text: "15.276 tỷ USD", isCorrect: true, explanation: "B: ✅ Chính xác! Đây là \"kho báu\" của EU năm 2020." },
-      { label: "C", text: "20.937 tỷ USD", isCorrect: false, explanation: "C: ❌ Wow, số này của \"đại gia\" Hoa Kỳ đấy!" },
-      { label: "D", text: "4.975 tỷ USD", isCorrect: false, explanation: "D: ❌ Hơi ít, đây là GDP của Nhật Bản năm 2020." }
+      { text: "A. 14.723 tỷ USD", isCorrect: false, explanation: "A: ❌ Số này thuộc về \"anh hàng xóm\" Trung Quốc năm 2020." },
+      { text: "B. 15.276 tỷ USD", isCorrect: true, explanation: "B: ✅ Chính xác! Đây là \"kho báu\" của EU năm 2020." },
+      { text: "C. 20.937 tỷ USD", isCorrect: false, explanation: "C: ❌ Wow, số này của \"đại gia\" Hoa Kỳ đấy!" },
+      { text: "D. 4.975 tỷ USD", isCorrect: false, explanation: "D: ❌ Hơi ít, đây là GDP của Nhật Bản năm 2020." }
     ],
     historicalContext: "🇩🇪 Đức là \"ông trùm\" kinh tế EU, đóng góp 1/4 tổng GDP của cả nhóm!"
   },
@@ -58,10 +58,10 @@ const quizData = [
     question: "🌍 Châu Á có diện tích khoảng bao nhiêu?",
     icon: <Globe className="text-green-500" />,
     answers: [
-      { label: "A", text: "30,3 triệu km²", isCorrect: false, explanation: "A: ❌ Hơi \"gầy\" so với thực tế rồi!" },
-      { label: "B", text: "44,4 triệu km²", isCorrect: true, explanation: "B: ✅ Bingo! Châu Á \"to đùng\" đúng 44,4 triệu km² (kể cả các đảo)." },
-      { label: "C", text: "42,5 triệu km²", isCorrect: false, explanation: "C: ❌ Số này thuộc về \"anh em\" châu Âu đấy." },
-      { label: "D", text: "17,8 triệu km²", isCorrect: false, explanation: "D: ❌ Đây là diện tích của \"ông lớn\" Nga, không phải cả châu Á." }
+      { text: "A. 30,3 triệu km²", isCorrect: false, explanation: "A: ❌ Hơi \"gầy\" so với thực tế rồi!" },
+      { text: "B. 44,4 triệu km²", isCorrect: true, explanation: "B: ✅ Bingo! Châu Á \"to đùng\" đúng 44,4 triệu km² (kể cả các đảo)." },
+      { text: "C. 42,5 triệu km²", isCorrect: false, explanation: "C: ❌ Số này thuộc về \"anh em\" châu Âu đấy." },
+      { text: "D. 17,8 triệu km²", isCorrect: false, explanation: "D: ❌ Đây là diện tích của \"ông lớn\" Nga, không phải cả châu Á." }
     ],
     historicalContext: "🌎 Châu Á \"chiếm sóng\" 30% diện tích đất liền trên Trái Đất. Quả là một \"ngôi sao\" sáng giá!"
   },
@@ -69,10 +69,10 @@ const quizData = [
     question: "🌊 Châu Á tiếp giáp với bao nhiêu đại dương?",
     icon: <Droplet className="text-blue-600" />,
     answers: [
-      { label: "A", text: "2", isCorrect: false, explanation: "A: ❌ Thiếu mất 1 \"người bạn\" đại dương rồi!" },
-      { label: "B", text: "3", isCorrect: true, explanation: "B: ✅ Chính xác! Châu Á có 3 \"người bạn\" đại dương: Thái Bình Dương, Ấn Độ Dương và Bắc Băng Dương." },
-      { label: "C", text: "4", isCorrect: false, explanation: "C: ❌ Hơi nhiều, châu Á chỉ có 3 \"người bạn\" đại dương thôi." },
-      { label: "D", text: "5", isCorrect: false, explanation: "D: ❌ Wow, quá nhiều rồi! Châu Á chỉ có 3 \"người bạn\" đại dương thôi." }
+      { text: "A. 2", isCorrect: false, explanation: "A: ❌ Thiếu mất 1 \"người bạn\" đại dương rồi!" },
+      { text: "B. 3", isCorrect: true, explanation: "B: ✅ Chính xác! Châu Á có 3 \"người bạn\" đại dương: Thái Bình Dương, Ấn Độ Dương và Bắc Băng Dương." },
+      { text: "C. 4", isCorrect: false, explanation: "C: ❌ Hơi nhiều, châu Á chỉ có 3 \"người bạn\" đại dương thôi." },
+      { text: "D. 5", isCorrect: false, explanation: "D: ❌ Wow, quá nhiều rồi! Châu Á chỉ có 3 \"người bạn\" đại dương thôi." }
     ],
     historicalContext: "🏆 Châu Á là \"siêu sao\" duy nhất tiếp giáp với cả 3 đại dương lớn của Trái Đất!"
   },
@@ -80,10 +80,10 @@ const quizData = [
     question: "📏 Chiều dài lớn nhất của châu Á theo hướng Đông-Tây là bao nhiêu?",
     icon: <Ruler className="text-yellow-600" />,
     answers: [
-      { label: "A", text: "7.500 km", isCorrect: false, explanation: "A: ❌ Hơi \"ngắn\" so với thực tế rồi!" },
-      { label: "B", text: "8.500 km", isCorrect: false, explanation: "B: ❌ Gần đúng, nhưng đây là chiều dài Bắc-Nam." },
-      { label: "C", text: "9.200 km", isCorrect: true, explanation: "C: ✅ Chính xác! Châu Á \"dài ngoằng\" 9.200 km từ Tây sang Đông." },
-      { label: "D", text: "10.000 km", isCorrect: false, explanation: "D: ❌ Hơi \"dài\" so với thực tế rồi!" }
+      { text: "A. 7.500 km", isCorrect: false, explanation: "A: ❌ Hơi \"ngắn\" so với thực tế rồi!" },
+      { text: "B. 8.500 km", isCorrect: false, explanation: "B: ❌ Gần đúng, nhưng đây là chiều dài Bắc-Nam." },
+      { text: "C. 9.200 km", isCorrect: true, explanation: "C: ✅ Chính xác! Châu Á \"dài ngoằng\" 9.200 km từ Tây sang Đông." },
+      { text: "D. 10.000 km", isCorrect: false, explanation: "D: ❌ Hơi \"dài\" so với thực tế rồi!" }
     ],
     historicalContext: "✈️ 9.200 km này tương đương với chuyến bay từ London (Anh) đến Tokyo (Nhật Bản). Một chuyến du lịch xuyên lục địa tuyệt vời!"
   },
@@ -91,10 +91,10 @@ const quizData = [
     question: "🗻 Khu vực nào của châu Á có địa hình núi cao, đồ sộ và hiểm trở nhất thế giới?",
     icon: <Mountain className="text-gray-500" />,
     answers: [
-      { label: "A", text: "Phía bắc", isCorrect: false, explanation: "A: ❌ Phía bắc là vùng đất phẳng lì, không phải \"nóc nhà thế giới\"." },
-      { label: "B", text: "Phía đông", isCorrect: false, explanation: "B: ❌ Phía đông là \"bậc thang khổng lồ\", không phải nơi cao nhất." },
-      { label: "C", text: "Trung tâm", isCorrect: true, explanation: "C: ✅ Bingo! Trung tâm châu Á là \"nóc nhà thế giới\" với Himalaya hùng vĩ." },
-      { label: "D", text: "Phía nam và tây nam", isCorrect: false, explanation: "D: ❌ Phía nam và tây nam đa dạng, nhưng không phải nơi cao nhất." }
+      { text: "A. Phía bắc", isCorrect: false, explanation: "A: ❌ Phía bắc là vùng đất phẳng lì, không phải \"nóc nhà thế giới\"." },
+      { text: "B. Phía đông", isCorrect: false, explanation: "B: ❌ Phía đông là \"bậc thang khổng lồ\", không phải nơi cao nhất." },
+      { text: "C. Trung tâm", isCorrect: true, explanation: "C: ✅ Bingo! Trung tâm châu Á là \"nóc nhà thế giới\" với Himalaya hùng vĩ." },
+      { text: "D. Phía nam và tây nam", isCorrect: false, explanation: "D: ❌ Phía nam và tây nam đa dạng, nhưng không phải nơi cao nhất." }
     ],
     historicalContext: "🏔️ Đỉnh Everest ở Himalaya là \"ông hoàng\" của các ngọn núi, cao 8.848m - tương đương với 29 tòa nhà Empire State chồng lên nhau!"
   },
@@ -102,10 +102,10 @@ const quizData = [
     question: "🌋 Đặc điểm nào sau đây KHÔNG phải là đặc điểm địa hình của châu Á?",
     icon: <Mountain className="text-orange-600" />,
     answers: [
-      { label: "A", text: "Đa dạng", isCorrect: false, explanation: "A: ❌ Sai lầm! Châu Á đa dạng như một bảo tàng địa chất sống." },
-      { label: "B", text: "Bề mặt bị chia cắt mạnh", isCorrect: false, explanation: "B: ❌ Không đúng! Châu Á bị chia cắt như một bức tranh ghép khổng lồ." },
-      { label: "C", text: "Chủ yếu là đồng bằng", isCorrect: true, explanation: "C: ✅ Chính xác! Châu Á không chỉ có đồng bằng, mà còn có cả \"rừng\" địa hình khác." },
-      { label: "D", text: "Có nhiều núi và sơn nguyên cao đồ sộ", isCorrect: false, explanation: "D: ❌ Sai rồi! Châu Á có nhiều núi cao đồ sộ, đúng là \"nóc nhà thế giới\"." }
+      { text: "A. Đa dạng", isCorrect: false, explanation: "A: ❌ Sai lầm! Châu Á đa dạng như một bảo tàng địa chất sống." },
+      { text: "B. Bề mặt bị chia cắt mạnh", isCorrect: false, explanation: "B: ❌ Không đúng! Châu Á bị chia cắt như một bức tranh ghép khổng lồ." },
+      { text: "C. Chủ yếu là đồng bằng", isCorrect: true, explanation: "C: ✅ Chính xác! Châu Á không chỉ có đồng bằng, mà còn có cả \"rừng\" địa hình khác." },
+      { text: "D. Có nhiều núi và sơn nguyên cao đồ sộ", isCorrect: false, explanation: "D: ❌ Sai rồi! Châu Á có nhiều núi cao đồ sộ, đúng là \"nóc nhà thế giới\"." }
     ],
     historicalContext: "🌾 Mặc dù không chỉ có đồng bằng, châu Á vẫn có những \"chảo lúa\" khổng lồ như đồng bằng Bắc Trung Quốc - rộng bằng 3 lần diện tích Việt Nam!"
   },
@@ -113,10 +113,10 @@ const quizData = [
     question: "🌿 Ý nghĩa nào sau đây KHÔNG phải của đặc điểm địa hình châu Á đối với việc sử dụng và bảo vệ tự nhiên?",
     icon: <Leaf className="text-green-400" />,
     answers: [
-      { label: "A", text: "Gây khó khăn cho giao thông ở vùng núi cao", isCorrect: false, explanation: "A: ❌ Sai rồi! Núi cao đúng là thách thức cho giao thông." },
-      { label: "B", text: "Đòi hỏi chú ý chống xói mòn khi khai thác, sử dụng", isCorrect: false, explanation: "B: ❌ Không đúng! Địa hình chia cắt đúng là cần chú ý chống xói mòn." },
-      { label: "C", text: "Thuận lợi cho sản xuất và định cư ở cao nguyên, đồng bằng", isCorrect: false, explanation: "C: ❌ Sai lầm! Cao nguyên, đồng bằng đúng là thiên đường cho sản xuất và định cư." },
-      { label: "D", text: "Tạo điều kiện phát triển nông nghiệp ở mọi nơi", isCorrect: true, explanation: "D: ✅ Chính xác! Địa hình đa dạng không cho phép phát triển nông nghiệp ở mọi nơi, nhất là ở vùng núi cao hiểm trở." }
+      { text: "A. Gây khó khăn cho giao thông ở vùng núi cao", isCorrect: false, explanation: "A: ❌ Sai rồi! Núi cao đúng là thách thức cho giao thông." },
+      { text: "B. Đòi hỏi chú ý chống xói mòn khi khai thác, sử dụng", isCorrect: false, explanation: "B: ❌ Không đúng! Địa hình chia cắt đúng là cần chú ý chống xói mòn." },
+      { text: "C. Thuận lợi cho sản xuất và định cư ở cao nguyên, đồng bằng", isCorrect: false, explanation: "C: ❌ Sai lầm! Cao nguyên, đồng bằng đúng là thiên đường cho sản xuất và định cư." },
+      { text: "D. Tạo điều kiện phát triển nông nghiệp ở mọi nơi", isCorrect: true, explanation: "D: ✅ Chính xác! Địa hình đa dạng không cho phép phát triển nông nghiệp ở mọi nơi, nhất là ở vùng núi cao hiểm trở." }
     ],
     historicalContext: "🍚 Dù có nhiều \"thách thức địa hình\", châu Á vẫn là \"ông vua\" sản xuất gạo, chiếm 90% sản lượng toàn cầu. Quả là một kỳ tích!"
   }

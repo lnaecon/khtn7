@@ -26,105 +26,95 @@ import './App.css';
 
 const quizData = [
   {
-      question: "🏡 Em tán thành hay không tán thành với những quan điểm dưới đây? Vì sao?",
-      icon: <Landmark className="text-yellow-500" />,
-      answers: [
-        { 
-          text: "A: Tự hào về truyền thống quê hương cũng chính là tự hào về nguồn gốc, dòng họ, tổ tiên của mình.",
-          isCorrect: true, 
-          explanation: "...A: ✅ Đúng! Truyền thống quê hương gắn liền với lịch sử, văn hóa của địa phương, là nơi sinh ra và nuôi dưỡng các thế hệ gia đình, dòng họ."
-        },
-        { 
-          text: "B: Nghề thủ công truyền thống không còn là niềm tự hào của quê hương vì không phù hợp với cuộc sống hiện đại.",
-          isCorrect: false, 
-          explanation: "...B: ❌ Sai! Nghề thủ công truyền thống vẫn là nét đẹp văn hóa, là niềm tự hào của quê hương cần được gìn giữ và phát huy."
-        },
-        { 
-          text: "C: Truyền dạy chữ Hán và những làn điệu dân ca địa phương là một phần của truyền thống văn hoá quê hương.",
-          isCorrect: true, 
-          explanation: "...C: ✅ Đúng! Chữ Hán và dân ca địa phương là một phần quan trọng trong di sản văn hóa truyền thống của quê hương."
-        }
-      ],
-      historicalContext: "🌺 Truyền thống quê hương là những giá trị vô cùng quý báu mà cha ông ta đã dày công vun đắp. Dù xã hội có phát triển đến đâu, chúng ta vẫn cần trân trọng, gìn giữ và phát huy những nét đẹp truyền thống ấy!"
-    },
-    {
-      question: "🎋 Em đồng tình hay không đồng tình với những hành vi của các bạn dưới đây? Vì sao?",
-      icon: <Heart className="text-orange-500" />,
-      answers: [
-        { 
-          text: "A: K cùng các bạn trong lớp lập nhóm tìm hiểu về truyền thống yêu nước, chống giặc ngoại xâm của thành phố nơi mình sinh sống.",
-          isCorrect: true, 
-          explanation: "...A: ✅ Đồng tình! Đây là việc làm tốt, thể hiện sự quan tâm tìm hiểu và tự hào về truyền thống quê hương."
-        },
-        { 
-          text: "B: Trong lễ hội đầu xuân, M theo một số anh chị đi chèo kéo khách mua đồ lưu niệm.",
-          isCorrect: false, 
-          explanation: "...B: ❌ Không đồng tình! Hành vi này làm mất đi nét đẹp văn hóa của lễ hội truyền thống."
-        },
-        { 
-          text: "C: A vận động các bạn trong lớp tham gia hội thi 'Tự hào truyền thống quê hương' do trường tổ chức.",
-          isCorrect: true, 
-          explanation: "...C: ✅ Đồng tình! Đây là hoạt động ý nghĩa giúp học sinh hiểu hơn và tự hào về truyền thống quê hương."
-        }
-      ],
-      historicalContext: "🌿 Mỗi người trẻ chúng ta đều có thể góp phần gìn giữ và phát huy truyền thống quê hương bằng những việc làm thiết thực. Hãy luôn tự hào và trân trọng những giá trị truyền thống tốt đẹp nhé!"
-    },
+    question: "🏡 Em đồng tình với quan điểm nào dưới đây về truyền thống quê hương?",
+    icon: <Landmark className="text-yellow-500" />,
+    answers: [
+      { 
+        text: "A: Tự hào về truyền thống quê hương cũng chính là tự hào về nguồn gốc, dòng họ, tổ tiên của mình.",
+        isCorrect: true, 
+        explanation: "...A: ✅ Đúng! Truyền thống quê hương gắn liền với lịch sử, văn hóa của địa phương, là nơi sinh ra và nuôi dưỡng các thế hệ gia đình, dòng họ."
+      },
+      { 
+        text: "B: Nghề thủ công truyền thống không còn là niềm tự hào của quê hương vì không phù hợp với cuộc sống hiện đại.",
+        isCorrect: false, 
+        explanation: "...B: ❌ Sai! Nghề thủ công truyền thống vẫn là nét đẹp văn hóa, là niềm tự hào của quê hương cần được gìn giữ và phát huy."
+      },
+      { 
+        text: "C: Chỉ cần giữ gìn các di tích lịch sử là đủ để bảo tồn truyền thống quê hương.",
+        isCorrect: false, 
+        explanation: "...C: ❌ Sai! Bảo tồn truyền thống quê hương cần nhiều hơn việc chỉ giữ gìn di tích, bao gồm cả việc duy trì văn hóa, phong tục, tập quán."
+      }
+    ],
+    historicalContext: "🌺 Truyền thống quê hương là những giá trị vô cùng quý báu mà cha ông ta đã dày công vun đắp. Dù xã hội có phát triển đến đâu, chúng ta vẫn cần trân trọng, gìn giữ và phát huy những nét đẹp truyền thống ấy!"
+  },
   {
-      question: "❤️ Em tán thành hay không tán thành với ý kiến nào dưới đây? Vì sao?",
-      icon: <Heart className="text-red-500" />,
-      answers: [
-        { 
-          text: "A: Chỉ người nào gặp khó khăn mới cần tới sự quan tâm, cảm thông và chia sẻ.",
-          isCorrect: false, 
-          explanation: "...A: ❌ Sai! Mọi người đều cần được quan tâm, cảm thông và chia sẻ, không chỉ khi gặp khó khăn."
-        },
-        { 
-          text: "B: Khi ai đó có lời đề nghị thì mình mới cần quan tâm, cảm thông và chia sẻ.",
-          isCorrect: false, 
-          explanation: "...B: ❌ Sai! Chúng ta nên chủ động quan tâm, cảm thông và chia sẻ với người khác, không chỉ khi họ đề nghị."
-        },
-        { 
-          text: "C: Để thể hiện sự quan tâm, cảm thông và chia sẻ thì chỉ cần tặng quà là đủ.",
-          isCorrect: false, 
-          explanation: "...C: ❌ Sai! Quan tâm, cảm thông và chia sẻ thể hiện qua nhiều cách, không chỉ bằng vật chất mà còn bằng tinh thần."
-        },
-        { 
-          text: "D: Sự quan tâm, cảm thông và chia sẻ giúp mọi người cảm thấy vui vẻ, hạnh phúc và yêu thương nhau hơn.",
-          isCorrect: true, 
-          explanation: "...D: ✅ Đúng! Quan tâm, cảm thông và chia sẻ giúp tạo nên mối quan hệ tốt đẹp, làm cho cuộc sống ấm áp hơn."
-        }
-      ],
-      historicalContext: "💝 Quan tâm, cảm thông và chia sẻ là những hành động đẹp thể hiện tình người. Đôi khi chỉ cần một lời hỏi thăm, một cái ôm, hay một nụ cười cũng đủ làm ấm lòng người khác rồi!"
-    },
-    {
-      question: "🤝 Em hãy nhận xét hành vi của các bạn dưới đây:",
-      icon: <Heart className="text-purple-500" />,
-      answers: [
-        { 
-          text: "A: Mặc dù rất yêu quý ông bà nhưng H ít khi gọi điện hỏi thăm vì cho rằng như thế là không cần thiết.",
-          isCorrect: false, 
-          explanation: "...A: ❌ Chưa đúng! Gọi điện hỏi thăm là cách thể hiện sự quan tâm, yêu thương đối với ông bà."
-        },
-        { 
-          text: "B: Thấy hoàn cảnh bác hàng xóm khó khăn, M xin mẹ rau và gạo mang sang biếu bác.",
-          isCorrect: true, 
-          explanation: "...B: ✅ Đúng! Đây là hành động thể hiện sự quan tâm, chia sẻ với người gặp khó khăn."
-        },
-        { 
-          text: "C: K mượn V đồ lặt vặt để giúp V bớt mặc cảm về hoàn cảnh khó khăn của bản thân.",
-          isCorrect: true, 
-          explanation: "...C: ✅ Đúng! K đã thể hiện sự tinh tế, cảm thông với hoàn cảnh của V và tìm cách giúp bạn cảm thấy thoải mái hơn."
-        },
-        { 
-          text: "D: Trên đường đi học về, thấy một bạn bị bắt nạt, T định dừng lại can ngăn nhưng A kéo tay bảo: 'Thôi...'.",
-          isCorrect: false, 
-          explanation: "...D: ❌ Chưa đúng! T đã có ý định can ngăn hành vi bắt nạt, thể hiện sự quan tâm đúng đắn. A không nên ngăn cản T."
-        }
-      ],
-      historicalContext: "🌟 Trong cuộc sống, có rất nhiều cách để thể hiện sự quan tâm, cảm thông và chia sẻ. Đôi khi chỉ là những hành động nhỏ nhưng lại mang ý nghĩa lớn. Hãy luôn tinh tế và sẵn sàng giúp đỡ khi người khác cần!"
-    },
+    question: "🎋 Em ủng hộ hành động nào dưới đây trong việc gìn giữ truyền thống quê hương?",
+    icon: <Heart className="text-orange-500" />,
+    answers: [
+      { 
+        text: "A: Lập nhóm tìm hiểu về truyền thống yêu nước, chống giặc ngoại xâm của thành phố nơi mình sinh sống.",
+        isCorrect: true, 
+        explanation: "...A: ✅ Đúng! Đây là việc làm tốt, thể hiện sự quan tâm tìm hiểu và tự hào về truyền thống quê hương."
+      },
+      { 
+        text: "B: Chèo kéo khách mua đồ lưu niệm trong lễ hội đầu xuân.",
+        isCorrect: false, 
+        explanation: "...B: ❌ Sai! Hành vi này làm mất đi nét đẹp văn hóa của lễ hội truyền thống."
+      },
+      { 
+        text: "C: Chỉ tham gia các hoạt động truyền thống khi được nhà trường yêu cầu.",
+        isCorrect: false, 
+        explanation: "...C: ❌ Sai! Việc gìn giữ truyền thống cần sự chủ động và tự nguyện, không chỉ khi được yêu cầu."
+      }
+    ],
+    historicalContext: "🌿 Mỗi người trẻ chúng ta đều có thể góp phần gìn giữ và phát huy truyền thống quê hương bằng những việc làm thiết thực. Hãy luôn tự hào và trân trọng những giá trị truyền thống tốt đẹp nhé!"
+  },
   {
-    question: "📚 Em đồng tình hay không đồng tình với ý kiến nào dưới đây? Vì sao?",
+    question: "❤️ Em đồng tình với ý kiến nào dưới đây về sự quan tâm, cảm thông và chia sẻ?",
+    icon: <Heart className="text-red-500" />,
+    answers: [
+      { 
+        text: "A: Chỉ người nào gặp khó khăn mới cần tới sự quan tâm, cảm thông và chia sẻ.",
+        isCorrect: false, 
+        explanation: "...A: ❌ Sai! Mọi người đều cần được quan tâm, cảm thông và chia sẻ, không chỉ khi gặp khó khăn."
+      },
+      { 
+        text: "B: Khi ai đó có lời đề nghị thì mình mới cần quan tâm, cảm thông và chia sẻ.",
+        isCorrect: false, 
+        explanation: "...B: ❌ Sai! Chúng ta nên chủ động quan tâm, cảm thông và chia sẻ với người khác, không chỉ khi họ đề nghị."
+      },
+      { 
+        text: "C: Sự quan tâm, cảm thông và chia sẻ giúp mọi người cảm thấy vui vẻ, hạnh phúc và yêu thương nhau hơn.",
+        isCorrect: true, 
+        explanation: "...C: ✅ Đúng! Quan tâm, cảm thông và chia sẻ giúp tạo nên mối quan hệ tốt đẹp, làm cho cuộc sống ấm áp hơn."
+      }
+    ],
+    historicalContext: "💝 Quan tâm, cảm thông và chia sẻ là những hành động đẹp thể hiện tình người. Đôi khi chỉ cần một lời hỏi thăm, một cái ôm, hay một nụ cười cũng đủ làm ấm lòng người khác rồi!"
+  },
+  {
+    question: "🤝 Em thấy hành vi nào dưới đây thể hiện sự quan tâm, cảm thông đúng đắn?",
+    icon: <Heart className="text-purple-500" />,
+    answers: [
+      { 
+        text: "A: Ít khi gọi điện hỏi thăm ông bà vì cho rằng như thế là không cần thiết.",
+        isCorrect: false, 
+        explanation: "...A: ❌ Sai! Gọi điện hỏi thăm là cách thể hiện sự quan tâm, yêu thương đối với ông bà."
+      },
+      { 
+        text: "B: Xin mẹ rau và gạo mang sang biếu bác hàng xóm có hoàn cảnh khó khăn.",
+        isCorrect: true, 
+        explanation: "...B: ✅ Đúng! Đây là hành động thể hiện sự quan tâm, chia sẻ với người gặp khó khăn."
+      },
+      { 
+        text: "C: Kéo tay bạn không cho can ngăn khi thấy một bạn khác bị bắt nạt.",
+        isCorrect: false, 
+        explanation: "...C: ❌ Sai! Can ngăn hành vi bắt nạt là thể hiện sự quan tâm đúng đắn, không nên ngăn cản việc này."
+      }
+    ],
+    historicalContext: "🌟 Trong cuộc sống, có rất nhiều cách để thể hiện sự quan tâm, cảm thông và chia sẻ. Đôi khi chỉ là những hành động nhỏ nhưng lại mang ý nghĩa lớn. Hãy luôn tinh tế và sẵn sàng giúp đỡ khi người khác cần!"
+  },
+  {
+    question: "📚 Em đồng tình với ý kiến nào dưới đây về học tập tự giác, tích cực?",
     icon: <Book className="text-blue-500" />,
     answers: [
       { 
@@ -141,43 +131,28 @@ const quizData = [
         text: "C: Chỉ cần xây dựng kế hoạch học tập còn việc thực hiện thì tuỳ thuộc vào hoàn cảnh.",
         isCorrect: false, 
         explanation: "...C: ❌ Sai! Việc thực hiện kế hoạch học tập là quan trọng, không nên phụ thuộc vào hoàn cảnh."
-      },
-      { 
-        text: "D: Tự giác, tích cực học tập giúp em rèn luyện tính tự lập, tự chủ và tích luỹ kiến thức cho bản thân.",
-        isCorrect: true, 
-        explanation: "...D: ✅ Đúng! Đây là những lợi ích quan trọng của việc học tập tự giác, tích cực."
       }
     ],
     historicalContext: "💡 Học tập tự giác, tích cực không chỉ giúp em đạt kết quả tốt trong học tập mà còn rèn luyện cho em nhiều kỹ năng quý báu. Đó là khả năng tự quản lý thời gian, tính kỷ luật, sự kiên trì và lòng đam mê học hỏi!"
   },
   {
-    question: "👥 Bạn nào dưới đây đã học tập tự giác, tích cực? Vì sao?",
+    question: "👥 Em thấy hành động nào dưới đây thể hiện việc học tập tự giác, tích cực?",
     icon: <Users className="text-green-500" />,
     answers: [
       { 
-        text: "A: Q thường nhờ các bạn học giỏi trong lớp làm giúp bài tập rồi chép lại.",
+        text: "A: Nhờ các bạn học giỏi trong lớp làm giúp bài tập rồi chép lại.",
         isCorrect: false, 
-        explanation: "...A: ❌ Sai! Q không tự mình làm bài tập, mà nhờ người khác làm hộ."
+        explanation: "...A: ❌ Sai! Đây không phải là học tập tự giác, tích cực mà là hành vi gian lận."
       },
       { 
-        text: "B: A luôn thích đọc tác phẩm văn học, sưu tầm những câu chuyện, câu nói hay để vận dụng vào việc viết văn.",
+        text: "B: Thích đọc tác phẩm văn học, sưu tầm những câu chuyện, câu nói hay để vận dụng vào việc viết văn.",
         isCorrect: true, 
-        explanation: "...B: ✅ Đúng! A chủ động tìm tòi, học hỏi để nâng cao kỹ năng của mình."
+        explanation: "...B: ✅ Đúng! Đây là biểu hiện của việc chủ động tìm tòi, học hỏi để nâng cao kỹ năng của mình."
       },
       {
-        text: "C: B thích môn Tiếng Anh nên thường xuyên mang sách Tiếng Anh ra làm bài tập trong các giờ học khác.",
+        text: "C: Làm bài tập môn Tiếng Anh trong giờ học các môn khác.",
         isCorrect: false,
-        explanation: "...C: ❌ Sai! B không tập trung vào môn học đang diễn ra, và có quan điểm sai lệch về tầm quan trọng của các môn học."
-      },
-      {
-        text: "D: N thường xuyên ngồi vào bàn học đúng giờ nhưng tay vẫn cầm điện thoại để nhắn tin.",
-        isCorrect: false,
-        explanation: "...D: ❌ Sai! N chưa thực sự tập trung vào việc học, và cần sự nhắc nhở của bố mẹ."
-      },
-      {
-        text: "E: Thấy T ngủ gật trong giờ học, P nhắc bạn cần tập trung nghe cô giảng bài.",
-        isCorrect: true,
-        explanation: "...E: ✅ Đúng! P quan tâm đến việc học của bạn và nhắc nhở bạn tập trung."
+        explanation: "...C: ❌ Sai! Đây là hành vi không tập trung vào môn học đang diễn ra, thể hiện sự thiếu tôn trọng và không tự giác."
       }
     ],
     historicalContext: "🌟 Học tập tự giác không chỉ là việc ngồi vào bàn học đúng giờ, mà còn là thái độ ham học hỏi, chủ động tìm tòi kiến thức mới. Hãy luôn giữ tinh thần học hỏi nhé!"
@@ -300,72 +275,48 @@ const QuizDashboard = () => {
       {isEssayOpen && (
         <div className="absolute top-16 left-0 right-0 mx-auto w-full max-w-3xl bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg z-10 overflow-y-auto max-h-[80vh]">
           <h2 className="text-2xl font-bold mb-4">Tự Luận</h2>
-
           <div className="mb-8">
-            <p className="font-semibold text-xl mb-2">✨ <strong>Câu 1: Truyền thống quê hương - Lễ hội Cầu ngư</strong></p>
+            <p className="font-semibold text-xl mb-2">✨ <strong>Câu 1: Em hãy tìm hiểu về một truyền thống của quê hương và viết bài giới thiệu truyền thống đó cho mọi người.</strong></p>
             <p className="mt-2">
-              Quê hương tôi có một truyền thống rất đặc biệt - đó là Lễ hội Cầu ngư 🎏
+              Quê hương tôi có một truyền thống rất đặc biệt - đó là Lễ hội Cầu ngư. Đây là lễ hội truyền thống của ngư dân vùng biển, thường được tổ chức vào đầu năm mới với mong muốn cầu cho một năm mới bình an, đánh bắt được nhiều tôm cá.
+              <br /><br />
+              Lễ hội thường diễn ra trong 3 ngày, với nhiều nghi lễ và hoạt động văn hóa đặc sắc. Ngày đầu tiên, người dân tổ chức lễ cúng tại đình làng để cầu mong thần linh phù hộ. Ngày thứ hai là phần hội với các trò chơi dân gian như đua thuyền, kéo co, bắt vịt... Ngày cuối cùng, đoàn thuyền ngư dân sẽ ra khơi trong tiếng trống chiêng rộn ràng, mở đầu cho một mùa đánh bắt mới.
+              <br /><br />
+              Lễ hội Cầu ngư không chỉ thể hiện đức tin của ngư dân, mà còn là dịp để mọi người gắn kết, đoàn kết cùng nhau. Đây cũng là cơ hội để giới thiệu nét đẹp văn hóa địa phương với du khách. Qua đó, truyền thống tốt đẹp này được gìn giữ và lan tỏa đến thế hệ trẻ.
+              <br /><br />
+              Là người con của vùng biển, tôi rất tự hào về truyền thống Lễ hội Cầu ngư độc đáo này. Tôi mong muốn được góp phần nhỏ bé của mình để giữ gìn và phát huy nét đẹp văn hóa quê hương, để Lễ hội Cầu ngư mãi là niềm tự hào của người dân nơi đây.
             </p>
-            <ol className="list-decimal list-inside ml-6 mt-2">
-              <li>
-                <span className="font-semibold">Thời gian và ý nghĩa <Calendar className="inline-block" />:</span> Được tổ chức vào đầu năm mới, cầu mong một năm bình an và đánh bắt được nhiều tôm cá.
-              </li>
-              <li className="mt-2">
-                <span className="font-semibold">Các hoạt động chính <Anchor className="inline-block" />:</span>
-                <ul className="list-disc ml-8">
-                  <li>Ngày 1: Lễ cúng tại đình làng</li>
-                  <li>Ngày 2: Phần hội với trò chơi dân gian</li>
-                  <li>Ngày 3: Đoàn thuyền ra khơi</li>
-                </ul>
-              </li>
-              <li className="mt-2">
-                <span className="font-semibold">Ý nghĩa văn hóa <Heart className="inline-block" />:</span> Thể hiện đức tin, tăng cường đoàn kết và giới thiệu văn hóa địa phương.
-              </li>
-            </ol>
           </div>
-
           <div className="mb-8">
-            <p className="font-semibold text-xl mb-2">💫 <strong>Câu 2: Tấm gương về lòng nhân ái - Cô giáo Trần Thị Ngọc Trâm</strong></p>
-            <ol className="list-decimal list-inside ml-6 mt-2">
-              <li>
-                <span className="font-semibold">Công việc và môi trường <School className="inline-block" />:</span> Cô giáo tình nguyện dạy học ở vùng cao Sơn La.
-              </li>
-              <li className="mt-2">
-                <span className="font-semibold">Những việc làm đáng quý <Gift className="inline-block" />:</span>
-                <ul className="list-disc ml-8">
-                  <li>Quyên góp quần áo, sách vở</li>
-                  <li>Tổ chức bữa ăn miễn phí</li>
-                  <li>Mở lớp học tình thương</li>
-                  <li>Vận động học bổng</li>
-                </ul>
-              </li>
-              <li className="mt-2">
-                <span className="font-semibold">Bài học rút ra <Lightbulb className="inline-block" />:</span> Về lòng nhân ái, tinh thần cống hiến và sự quan tâm đến người khác.
-              </li>
-            </ol>
+            <p className="font-semibold text-xl mb-2">💫 <strong>Câu 2: Sưu tầm và kể về một tấm gương biết quan tâm, cảm thông và chia sẻ với người khác mà em biết. Em học tập được điều gì từ tấm gương đó?</strong></p>
+            <p className="mt-2">
+              Tôi xin kể về tấm gương của chị Trần Thị Ngọc Trâm, một cô giáo trẻ ở vùng cao Sơn La. Chị Trâm đã tình nguyện lên vùng cao dạy học, nơi còn nhiều khó khăn, thiếu thốn.
+              <br /><br />
+              Không chỉ dạy chữ, chị Trâm còn quan tâm đến đời sống của học trò. Chị vận động quyên góp quần áo ấm, sách vở cho các em, tổ chức nấu cơm trưa miễn phí để các em có bữa ăn đầy đủ hơn. Mỗi khi có học sinh nghỉ học, chị lại tìm đến tận nhà để tìm hiểu lý do và động viên các em đến trường.
+              <br /><br />
+              Chị Trâm còn tổ chức các lớp học tình thương vào buổi tối và cuối tuần để giúp học sinh yếu kém theo kịp chương trình. Với những học sinh có hoàn cảnh đặc biệt khó khăn, chị còn vận động mạnh thường quân hỗ trợ học bổng để các em có thể tiếp tục đến trường.
+              <br /><br />
+              Tấm gương của chị Trâm đã dạy cho tôi bài học quý giá về lòng nhân ái và tinh thần cống hiến. Chị đã cho tôi thấy rằng, chỉ cần có tấm lòng và sự nỗ lực, mỗi người đều có thể góp phần làm cho cuộc sống tốt đẹp hơn. Tôi học được từ chị sự quan tâm, yêu thương học trò, sự kiên trì và lòng nhiệt huyết trong công việc.
+              <br /><br />
+              Tấm gương của chị Trâm truyền cảm hứng cho tôi luôn cố gắng học tập, rèn luyện để sau này có thể đóng góp cho xã hội. Tôi cũng học cách quan tâm, chia sẻ nhiều hơn với những người xung quanh, đặc biệt là những bạn có hoàn cảnh khó khăn. Tôi tin rằng, nếu mỗi người đều biết quan tâm, cảm thông và chia sẻ như chị Trâm, xã hội sẽ ngày càng tốt đẹp hơn.
+            </p>
           </div>
-
           <div>
-            <p className="font-semibold text-xl mb-2">🌟 <strong>Câu 3: Tấm gương học tập - Nguyễn Văn An</strong></p>
-            <ol className="list-decimal list-inside ml-6 mt-2">
-              <li>
-                <span className="font-semibold">Hoàn cảnh <Home className="inline-block" />:</span> Gia đình khó khăn, bố mẹ là công nhân.
-              </li>
-              <li className="mt-2">
-                <span className="font-semibold">Nỗ lực học tập <Book className="inline-block" />:</span>
-                <ul className="list-disc ml-8">
-                  <li>Dậy sớm ôn bài</li>
-                  <li>Tự học thêm tiếng Anh</li>
-                  <li>Tham gia câu lạc bộ học thuật</li>
-                  <li>Đạt giải Nhất môn Toán cấp thành phố</li>
-                </ul>
-              </li>
-              <li className="mt-2">
-                <span className="font-semibold">Bài học kinh nghiệm <Star className="inline-block" />:</span> Ý chí vươn lên, tinh thần tự giác và quản lý thời gian hiệu quả.
-              </li>
-            </ol>
+            <p className="font-semibold text-xl mb-2">🌟 <strong>Câu 3: Em hãy viết về một tấm gương học tập tự giác, tích cực mà em biết. Em học tập được điều gì từ tấm gương đó?</strong></p>
+            <p className="mt-2">
+              Tôi xin kể về tấm gương học tập tự giác, tích cực của bạn Nguyễn Văn An, một học sinh lớp 9 trường THCS Lê Quý Đôn.
+              <br /><br />
+              An là một học sinh có hoàn cảnh gia đình khó khăn. Bố mẹ An đều là công nhân, phải làm việc từ sáng sớm đến tối muộn. Tuy vậy, An luôn nỗ lực vươn lên trong học tập. Mỗi ngày, An dậy từ 5 giờ sáng để ôn bài và chuẩn bị đồ đạc cho ngày học mới. Sau giờ học ở trường, An thường ở lại thư viện để làm bài tập và nghiên cứu thêm.
+              <br /><br />
+              An luôn chủ động đặt câu hỏi khi chưa hiểu bài và tích cực tham gia các hoạt động nhóm. Bạn còn tự học thêm tiếng Anh qua các ứng dụng trên điện thoại và tham gia các câu lạc bộ học thuật của trường. Nhờ sự nỗ lực không ngừng, An đã đạt được nhiều thành tích xuất sắc trong học tập, trong đó có giải Nhất môn Toán cấp thành phố.
+              <br /><br />
+              Từ tấm gương của An, tôi học được rằng hoàn cảnh khó khăn không phải là rào cản cho việc học tập. Điều quan trọng là phải có ý chí vươn lên và tinh thần tự giác, tích cực. Tôi cũng học được cách quản lý thời gian hiệu quả, biết tận dụng mọi cơ hội để học hỏi và không ngừng hoàn thiện bản thân.
+              <br /><br />
+              Tấm gương của An đã truyền cảm hứng cho tôi cố gắng hơn trong học tập. Tôi đã bắt đầu lập kế hoạch học tập cụ thể cho mỗi ngày và tuân thủ nghiêm túc. Tôi cũng tích cực hơn trong việc đặt câu hỏi khi chưa hiểu bài và chủ động tìm kiếm thông tin bổ sung cho các môn học.
+              <br /><br />
+              Tôi tin rằng, nếu mỗi học sinh đều học tập tự giác, tích cực như An, chúng ta sẽ đạt được nhiều thành tích xuất sắc trong học tập và cuộc sống.
+            </p>
           </div>
-
         </div>
       )}
 

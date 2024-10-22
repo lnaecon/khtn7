@@ -7,13 +7,17 @@ import {
   Book, 
   Globe, 
   Coins, 
+  Gift,
   Users, 
+  Anchor,
+  School,
   Building, 
-  CalendarDays,
-  Droplet,
-  Ruler,
-  Leaf,
-  Mountain,
+  Landmark,
+  Lightbulb,
+  Home,
+  Star,
+  Calendar,
+  Heart,
   Clock 
 } from 'lucide-react';
 import { Card, CardContent, CardHeader } from './components/ui/card';
@@ -22,104 +26,162 @@ import './App.css';
 
 const quizData = [
   {
-    question: "🎂 EU được thành lập chính thức vào năm nào?",
-    icon: <CalendarDays className="text-blue-500" />,
+      question: "🏡 Em tán thành hay không tán thành với những quan điểm dưới đây? Vì sao?",
+      icon: <Landmark className="text-yellow-500" />,
+      answers: [
+        { 
+          text: "A: Tự hào về truyền thống quê hương cũng chính là tự hào về nguồn gốc, dòng họ, tổ tiên của mình.",
+          isCorrect: true, 
+          explanation: "...A: ✅ Đúng! Truyền thống quê hương gắn liền với lịch sử, văn hóa của địa phương, là nơi sinh ra và nuôi dưỡng các thế hệ gia đình, dòng họ."
+        },
+        { 
+          text: "B: Nghề thủ công truyền thống không còn là niềm tự hào của quê hương vì không phù hợp với cuộc sống hiện đại.",
+          isCorrect: false, 
+          explanation: "...B: ❌ Sai! Nghề thủ công truyền thống vẫn là nét đẹp văn hóa, là niềm tự hào của quê hương cần được gìn giữ và phát huy."
+        },
+        { 
+          text: "C: Truyền dạy chữ Hán và những làn điệu dân ca địa phương là một phần của truyền thống văn hoá quê hương.",
+          isCorrect: true, 
+          explanation: "...C: ✅ Đúng! Chữ Hán và dân ca địa phương là một phần quan trọng trong di sản văn hóa truyền thống của quê hương."
+        }
+      ],
+      historicalContext: "🌺 Truyền thống quê hương là những giá trị vô cùng quý báu mà cha ông ta đã dày công vun đắp. Dù xã hội có phát triển đến đâu, chúng ta vẫn cần trân trọng, gìn giữ và phát huy những nét đẹp truyền thống ấy!"
+    },
+    {
+      question: "🎋 Em đồng tình hay không đồng tình với những hành vi của các bạn dưới đây? Vì sao?",
+      icon: <Heart className="text-orange-500" />,
+      answers: [
+        { 
+          text: "A: K cùng các bạn trong lớp lập nhóm tìm hiểu về truyền thống yêu nước, chống giặc ngoại xâm của thành phố nơi mình sinh sống.",
+          isCorrect: true, 
+          explanation: "...A: ✅ Đồng tình! Đây là việc làm tốt, thể hiện sự quan tâm tìm hiểu và tự hào về truyền thống quê hương."
+        },
+        { 
+          text: "B: Trong lễ hội đầu xuân, M theo một số anh chị đi chèo kéo khách mua đồ lưu niệm.",
+          isCorrect: false, 
+          explanation: "...B: ❌ Không đồng tình! Hành vi này làm mất đi nét đẹp văn hóa của lễ hội truyền thống."
+        },
+        { 
+          text: "C: A vận động các bạn trong lớp tham gia hội thi 'Tự hào truyền thống quê hương' do trường tổ chức.",
+          isCorrect: true, 
+          explanation: "...C: ✅ Đồng tình! Đây là hoạt động ý nghĩa giúp học sinh hiểu hơn và tự hào về truyền thống quê hương."
+        }
+      ],
+      historicalContext: "🌿 Mỗi người trẻ chúng ta đều có thể góp phần gìn giữ và phát huy truyền thống quê hương bằng những việc làm thiết thực. Hãy luôn tự hào và trân trọng những giá trị truyền thống tốt đẹp nhé!"
+    },
+  {
+      question: "❤️ Em tán thành hay không tán thành với ý kiến nào dưới đây? Vì sao?",
+      icon: <Heart className="text-red-500" />,
+      answers: [
+        { 
+          text: "A: Chỉ người nào gặp khó khăn mới cần tới sự quan tâm, cảm thông và chia sẻ.",
+          isCorrect: false, 
+          explanation: "...A: ❌ Sai! Mọi người đều cần được quan tâm, cảm thông và chia sẻ, không chỉ khi gặp khó khăn."
+        },
+        { 
+          text: "B: Khi ai đó có lời đề nghị thì mình mới cần quan tâm, cảm thông và chia sẻ.",
+          isCorrect: false, 
+          explanation: "...B: ❌ Sai! Chúng ta nên chủ động quan tâm, cảm thông và chia sẻ với người khác, không chỉ khi họ đề nghị."
+        },
+        { 
+          text: "C: Để thể hiện sự quan tâm, cảm thông và chia sẻ thì chỉ cần tặng quà là đủ.",
+          isCorrect: false, 
+          explanation: "...C: ❌ Sai! Quan tâm, cảm thông và chia sẻ thể hiện qua nhiều cách, không chỉ bằng vật chất mà còn bằng tinh thần."
+        },
+        { 
+          text: "D: Sự quan tâm, cảm thông và chia sẻ giúp mọi người cảm thấy vui vẻ, hạnh phúc và yêu thương nhau hơn.",
+          isCorrect: true, 
+          explanation: "...D: ✅ Đúng! Quan tâm, cảm thông và chia sẻ giúp tạo nên mối quan hệ tốt đẹp, làm cho cuộc sống ấm áp hơn."
+        }
+      ],
+      historicalContext: "💝 Quan tâm, cảm thông và chia sẻ là những hành động đẹp thể hiện tình người. Đôi khi chỉ cần một lời hỏi thăm, một cái ôm, hay một nụ cười cũng đủ làm ấm lòng người khác rồi!"
+    },
+    {
+      question: "🤝 Em hãy nhận xét hành vi của các bạn dưới đây:",
+      icon: <Heart className="text-purple-500" />,
+      answers: [
+        { 
+          text: "A: Mặc dù rất yêu quý ông bà nhưng H ít khi gọi điện hỏi thăm vì cho rằng như thế là không cần thiết.",
+          isCorrect: false, 
+          explanation: "...A: ❌ Chưa đúng! Gọi điện hỏi thăm là cách thể hiện sự quan tâm, yêu thương đối với ông bà."
+        },
+        { 
+          text: "B: Thấy hoàn cảnh bác hàng xóm khó khăn, M xin mẹ rau và gạo mang sang biếu bác.",
+          isCorrect: true, 
+          explanation: "...B: ✅ Đúng! Đây là hành động thể hiện sự quan tâm, chia sẻ với người gặp khó khăn."
+        },
+        { 
+          text: "C: K mượn V đồ lặt vặt để giúp V bớt mặc cảm về hoàn cảnh khó khăn của bản thân.",
+          isCorrect: true, 
+          explanation: "...C: ✅ Đúng! K đã thể hiện sự tinh tế, cảm thông với hoàn cảnh của V và tìm cách giúp bạn cảm thấy thoải mái hơn."
+        },
+        { 
+          text: "D: Trên đường đi học về, thấy một bạn bị bắt nạt, T định dừng lại can ngăn nhưng A kéo tay bảo: 'Thôi...'.",
+          isCorrect: false, 
+          explanation: "...D: ❌ Chưa đúng! T đã có ý định can ngăn hành vi bắt nạt, thể hiện sự quan tâm đúng đắn. A không nên ngăn cản T."
+        }
+      ],
+      historicalContext: "🌟 Trong cuộc sống, có rất nhiều cách để thể hiện sự quan tâm, cảm thông và chia sẻ. Đôi khi chỉ là những hành động nhỏ nhưng lại mang ý nghĩa lớn. Hãy luôn tinh tế và sẵn sàng giúp đỡ khi người khác cần!"
+    },
+  {
+    question: "📚 Em đồng tình hay không đồng tình với ý kiến nào dưới đây? Vì sao?",
+    icon: <Book className="text-blue-500" />,
     answers: [
-      { text: "A: 1991", isCorrect: false, explanation: "...A: ❌ EU chưa \"chào đời\" năm này." },
-      { text: "B: 1992", isCorrect: false, explanation: "...B: ❌ Gần lắm rồi, nhưng chưa đúng!" },
-      { text: "C: 1993", isCorrect: true, explanation: "...C: ✅ Bingo! EU chính thức ra mắt ngày 1/11/1993." },
-      { text: "D: 1994", isCorrect: false, explanation: "...D: ❌ Muộn mất rồi, EU đã \"lớn\" hơn 1 tuổi rồi." }
+      { 
+        text: "A: Luôn chủ động thực hiện nhiệm vụ học tập mà không cần ai nhắc nhở là biểu hiện của học tập tự giác, tích cực.",
+        isCorrect: true, 
+        explanation: "...A: ✅ Đúng! Đây là một trong những biểu hiện rõ nét của việc học tập tự giác, tích cực."
+      },
+      { 
+        text: "B: Chỉ cần tự giác, tích cực học tập khi tới các kì kiểm tra.",
+        isCorrect: false, 
+        explanation: "...B: ❌ Sai! Học tập tự giác, tích cực cần được duy trì thường xuyên, không chỉ khi có kiểm tra."
+      },
+      { 
+        text: "C: Chỉ cần xây dựng kế hoạch học tập còn việc thực hiện thì tuỳ thuộc vào hoàn cảnh.",
+        isCorrect: false, 
+        explanation: "...C: ❌ Sai! Việc thực hiện kế hoạch học tập là quan trọng, không nên phụ thuộc vào hoàn cảnh."
+      },
+      { 
+        text: "D: Tự giác, tích cực học tập giúp em rèn luyện tính tự lập, tự chủ và tích luỹ kiến thức cho bản thân.",
+        isCorrect: true, 
+        explanation: "...D: ✅ Đúng! Đây là những lợi ích quan trọng của việc học tập tự giác, tích cực."
+      }
     ],
-    historicalContext: "👶 Tiền thân của EU là \"em bé\" Cộng đồng Than và Thép châu Âu, sinh năm 1951 với 6 \"ông bố bà mẹ\" sáng lập!"
+    historicalContext: "💡 Học tập tự giác, tích cực không chỉ giúp em đạt kết quả tốt trong học tập mà còn rèn luyện cho em nhiều kỹ năng quý báu. Đó là khả năng tự quản lý thời gian, tính kỷ luật, sự kiên trì và lòng đam mê học hỏi!"
   },
   {
-    question: "🌟 Năm 2020, EU có bao nhiêu quốc gia thành viên?",
-    icon: <Globe className="text-green-500" />,
+    question: "👥 Bạn nào dưới đây đã học tập tự giác, tích cực? Vì sao?",
+    icon: <Users className="text-green-500" />,
     answers: [
-      { text: "A: 25", isCorrect: false, explanation: "...A: ❌ Thiếu mất 2 \"ngôi sao\" rồi!" },
-      { text: "B: 26", isCorrect: false, explanation: "...B: ❌ Gần đúng, nhưng còn thiếu 1 nước." },
-      { text: "C: 27", isCorrect: true, explanation: "...C: ✅ Chính xác! EU 2020 là một gia đình 27 thành viên." },
-      { text: "D: 28", isCorrect: false, explanation: "...D: ❌ Hơi dư 1 \"ngôi sao\" sau khi UK \"rời bữa tiệc\" (Brexit)." }
+      { 
+        text: "A: Q thường nhờ các bạn học giỏi trong lớp làm giúp bài tập rồi chép lại.",
+        isCorrect: false, 
+        explanation: "...A: ❌ Sai! Q không tự mình làm bài tập, mà nhờ người khác làm hộ."
+      },
+      { 
+        text: "B: A luôn thích đọc tác phẩm văn học, sưu tầm những câu chuyện, câu nói hay để vận dụng vào việc viết văn.",
+        isCorrect: true, 
+        explanation: "...B: ✅ Đúng! A chủ động tìm tòi, học hỏi để nâng cao kỹ năng của mình."
+      },
+      {
+        text: "C: B thích môn Tiếng Anh nên thường xuyên mang sách Tiếng Anh ra làm bài tập trong các giờ học khác.",
+        isCorrect: false,
+        explanation: "...C: ❌ Sai! B không tập trung vào môn học đang diễn ra, và có quan điểm sai lệch về tầm quan trọng của các môn học."
+      },
+      {
+        text: "D: N thường xuyên ngồi vào bàn học đúng giờ nhưng tay vẫn cầm điện thoại để nhắn tin.",
+        isCorrect: false,
+        explanation: "...D: ❌ Sai! N chưa thực sự tập trung vào việc học, và cần sự nhắc nhở của bố mẹ."
+      },
+      {
+        text: "E: Thấy T ngủ gật trong giờ học, P nhắc bạn cần tập trung nghe cô giảng bài.",
+        isCorrect: true,
+        explanation: "...E: ✅ Đúng! P quan tâm đến việc học của bạn và nhắc nhở bạn tập trung."
+      }
     ],
-    historicalContext: "🇭🇷 Croatia là \"em út\" của EU, gia nhập \"gia đình\" năm 2013!"
+    historicalContext: "🌟 Học tập tự giác không chỉ là việc ngồi vào bàn học đúng giờ, mà còn là thái độ ham học hỏi, chủ động tìm tòi kiến thức mới. Hãy luôn giữ tinh thần học hỏi nhé!"
   },
-  {
-    question: "💰 GDP của EU năm 2020 là bao nhiêu?",
-    icon: <Coins className="text-yellow-500" />,
-    answers: [
-      { text: "A: 14.723 tỷ USD", isCorrect: false, explanation: "...A: ❌ Số này thuộc về \"anh hàng xóm\" Trung Quốc năm 2020." },
-      { text: "B: 15.276 tỷ USD", isCorrect: true, explanation: "...B: ✅ Chính xác! Đây là \"kho báu\" của EU năm 2020." },
-      { text: "C: 20.937 tỷ USD", isCorrect: false, explanation: "...C: ❌ Wow, số này của \"đại gia\" Hoa Kỳ đấy!" },
-      { text: "D: 4.975 tỷ USD", isCorrect: false, explanation: "...D: ❌ Hơi ít, đây là GDP của Nhật Bản năm 2020." }
-    ],
-    historicalContext: "🇩🇪 Đức là \"ông trùm\" kinh tế EU, đóng góp 1/4 tổng GDP của cả nhóm!"
-  },
-  {
-    question: "🌍 Châu Á có diện tích khoảng bao nhiêu?",
-    icon: <Globe className="text-green-500" />,
-    answers: [
-      { text: "A: 30,3 triệu km²", isCorrect: false, explanation: "...A: ❌ Hơi \"gầy\" so với thực tế rồi!" },
-      { text: "B: 44,4 triệu km²", isCorrect: true, explanation: "...B: ✅ Bingo! Châu Á \"to đùng\" đúng 44,4 triệu km² (kể cả các đảo)." },
-      { text: "C: 42,5 triệu km²", isCorrect: false, explanation: "...C: ❌ Số này thuộc về \"anh em\" châu Âu đấy." },
-      { text: "D: 17,8 triệu km²", isCorrect: false, explanation: "...D: ❌ Đây là diện tích của \"ông lớn\" Nga, không phải cả châu Á." }
-    ],
-    historicalContext: "🌎 Châu Á \"chiếm sóng\" 30% diện tích đất liền trên Trái Đất. Quả là một \"ngôi sao\" sáng giá!"
-  },
-  {
-    question: "🌊 Châu Á tiếp giáp với bao nhiêu đại dương?",
-    icon: <Droplet className="text-blue-600" />,
-    answers: [
-      { text: "A: 2", isCorrect: false, explanation: "...A: ❌ Thiếu mất 1 \"người bạn\" đại dương rồi!" },
-      { text: "B: 3", isCorrect: true, explanation: "...B: ✅ Chính xác! Châu Á có 3 \"người bạn\" đại dương: Thái Bình Dương, Ấn Độ Dương và Bắc Băng Dương." },
-      { text: "C: 4", isCorrect: false, explanation: "...C: ❌ Hơi nhiều, châu Á chỉ có 3 \"người bạn\" đại dương thôi." },
-      { text: "D: 5", isCorrect: false, explanation: "...D: ❌ Wow, quá nhiều rồi! Châu Á chỉ có 3 \"người bạn\" đại dương thôi." }
-    ],
-    historicalContext: "🏆 Châu Á là \"siêu sao\" duy nhất tiếp giáp với cả 3 đại dương lớn của Trái Đất!"
-  },
-  {
-    question: "📏 Chiều dài lớn nhất của châu Á theo hướng Đông-Tây là bao nhiêu?",
-    icon: <Ruler className="text-yellow-600" />,
-    answers: [
-      { text: "A: 7.500 km", isCorrect: false, explanation: "...A: ❌ Hơi \"ngắn\" so với thực tế rồi!" },
-      { text: "B: 8.500 km", isCorrect: false, explanation: "...B: ❌ Gần đúng, nhưng đây là chiều dài Bắc-Nam." },
-      { text: "C: 9.200 km", isCorrect: true, explanation: "...C: ✅ Chính xác! Châu Á \"dài ngoằng\" 9.200 km từ Tây sang Đông." },
-      { text: "D: 10.000 km", isCorrect: false, explanation: "...D: ❌ Hơi \"dài\" so với thực tế rồi!" }
-    ],
-    historicalContext: "✈️ 9.200 km này tương đương với chuyến bay từ London (Anh) đến Tokyo (Nhật Bản). Một chuyến du lịch xuyên lục địa tuyệt vời!"
-  },
-  {
-    question: "🗻 Khu vực nào của châu Á có địa hình núi cao, đồ sộ và hiểm trở nhất thế giới?",
-    icon: <Mountain className="text-gray-500" />,
-    answers: [
-      { text: "A: Phía bắc", isCorrect: false, explanation: "...A: ❌ Phía bắc là vùng đất phẳng lì, không phải \"nóc nhà thế giới\"." },
-      { text: "B: Phía đông", isCorrect: false, explanation: "...B: ❌ Phía đông là \"bậc thang khổng lồ\", không phải nơi cao nhất." },
-      { text: "C: Trung tâm", isCorrect: true, explanation: "...C: ✅ Bingo! Trung tâm châu Á là \"nóc nhà thế giới\" với Himalaya hùng vĩ." },
-      { text: "D: Phía nam và tây nam", isCorrect: false, explanation: "...D: ❌ Phía nam và tây nam đa dạng, nhưng không phải nơi cao nhất." }
-    ],
-    historicalContext: "🏔️ Đỉnh Everest ở Himalaya là \"ông hoàng\" của các ngọn núi, cao 8.848m - tương đương với 29 tòa nhà Empire State chồng lên nhau!"
-  },
-  {
-    question: "🌋 Đặc điểm nào sau đây KHÔNG phải là đặc điểm địa hình của châu Á?",
-    icon: <Mountain className="text-orange-600" />,
-    answers: [
-      { text: "A: Đa dạng", isCorrect: false, explanation: "...A: ❌ Sai lầm! Châu Á đa dạng như một bảo tàng địa chất sống." },
-      { text: "B: Bề mặt bị chia cắt mạnh", isCorrect: false, explanation: "...B: ❌ Không đúng! Châu Á bị chia cắt như một bức tranh ghép khổng lồ." },
-      { text: "C: Chủ yếu là đồng bằng", isCorrect: true, explanation: "...C: ✅ Chính xác! Châu Á không chỉ có đồng bằng, mà còn có cả \"rừng\" địa hình khác." },
-      { text: "D: Có nhiều núi và sơn nguyên cao đồ sộ", isCorrect: false, explanation: "...D: ❌ Sai rồi! Châu Á có nhiều núi cao đồ sộ, đúng là \"nóc nhà thế giới\"." }
-    ],
-    historicalContext: "🌾 Mặc dù không chỉ có đồng bằng, châu Á vẫn có những \"chảo lúa\" khổng lồ như đồng bằng Bắc Trung Quốc - rộng bằng 3 lần diện tích Việt Nam!"
-  },
-  {
-    question: "🌿 Ý nghĩa nào sau đây KHÔNG phải của đặc điểm địa hình châu Á đối với việc sử dụng và bảo vệ tự nhiên?",
-    icon: <Leaf className="text-green-400" />,
-    answers: [
-      { text: "A: Gây khó khăn cho giao thông ở vùng núi cao", isCorrect: false, explanation: "...A: ❌ Sai rồi! Núi cao đúng là thách thức cho giao thông." },
-      { text: "B: Đòi hỏi chú ý chống xói mòn khi khai thác, sử dụng", isCorrect: false, explanation: "...B: ❌ Không đúng! Địa hình chia cắt đúng là cần chú ý chống xói mòn." },
-      { text: "C: Thuận lợi cho sản xuất và định cư ở cao nguyên, đồng bằng", isCorrect: false, explanation: "...C: ❌ Sai lầm! Cao nguyên, đồng bằng đúng là thiên đường cho sản xuất và định cư." },
-      { text: "D: Tạo điều kiện phát triển nông nghiệp ở mọi nơi", isCorrect: true, explanation: "...D: ✅ Chính xác! Địa hình đa dạng không cho phép phát triển nông nghiệp ở mọi nơi, nhất là ở vùng núi cao hiểm trở." }
-    ],
-    historicalContext: "🍚 Dù có nhiều \"thách thức địa hình\", châu Á vẫn là \"ông vua\" sản xuất gạo, chiếm 90% sản lượng toàn cầu. Quả là một kỳ tích!"
-  }
 ];
 
 const QuizDashboard = () => {
@@ -169,91 +231,66 @@ const QuizDashboard = () => {
         {isReviewOpen ? 'Đóng lại' : 'Ôn tập kiến thức'}
       </Button>
 
-      {/* Phần Nội dung Ôn tập kiến thức */}
       {isReviewOpen && (
         <div className="absolute top-16 left-0 right-0 mx-auto w-full max-w-3xl bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg z-10 overflow-y-auto max-h-[80vh]">
           <h2 className="text-2xl font-bold mb-4">Ôn Tập Kiến Thức</h2>
 
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold">🌍 <strong>A. Liên minh Châu Âu (EU) là một trong bốn trung tâm kinh tế lớn trên thế giới</strong></h3>
-            <p className="ml-4">EU được thành lập chính thức vào 1/11/1993.</p>
+          {/* Bài 1: Truyền thống quê hương */}
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold">🏡 <strong>1. Tự Hào Về Truyền Thống Quê Hương</strong></h3>
+            <p className="ml-4">
+              Truyền thống quê hương là những giá trị văn hóa tốt đẹp được truyền từ đời này qua đời khác như: ẩm thực, lễ hội, nghệ thuật, trang phục, tinh thần yêu nước,...
+            </p>
+            <p className="ml-4 mt-2">
+              Tự hào về truyền thống quê hương chính là tự hào về nguồn gốc của mình, là nền tảng để xây dựng giá trị cốt lõi và hình thành sự tự tin.
+            </p>
+            <p className="ml-4 font-semibold mt-2">Cách giữ gìn và phát huy truyền thống: 🌟</p>
             <ul className="list-disc list-inside ml-8">
-              <li>Năm 2020, EU có 27 quốc gia thành viên với khoảng 447 triệu dân 👥</li>
-              <li>Trụ sở đặt tại Brussels, Bỉ 🏙️</li>
-              <li>Có thị trường chung và đồng tiền chung (Euro) 💼</li>
-              <li>Là nhà trao đổi hàng hóa và dịch vụ lớn nhất thế giới 🌐 (31% trị giá xuất khẩu toàn cầu năm 2020)</li>
-              <li>Là đối tác thương mại hàng đầu của 80 quốc gia 🤝</li>
-              <li>Là trung tâm tài chính lớn với các ngân hàng có uy tín toàn cầu 💰</li>
-              <li>GDP năm 2020: 15.276 tỷ USD 💶</li>
-              <li>GDP bình quân đầu người năm 2020: 34.115 USD/năm 💸</li>
+              <li>🎭 Tham gia các hoạt động văn hóa truyền thống</li>
+              <li>📚 Tìm hiểu lịch sử, văn hóa địa phương</li>
+              <li>🙏 Kính trọng, biết ơn những người có công với quê hương</li>
+              <li>🏛️ Góp phần bảo vệ di sản văn hóa, di tích lịch sử</li>
             </ul>
           </div>
 
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold">Thông tin thú vị</h3>
+          {/* Bài 2: Quan tâm, cảm thông và chia sẻ */}
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold">💝 <strong>2. Quan Tâm, Cảm Thông và Chia Sẻ</strong></h3>
+            <p className="ml-4">
+              Quan tâm, cảm thông và chia sẻ là những biểu hiện của lòng nhân ái, thể hiện qua:
+            </p>
             <ul className="list-disc list-inside ml-8">
-              <li>🎓 <strong>Erasmus+:</strong> Chương trình "du học" siêu cool cho teen EU! Học ở nước ngoài, kết bạn quốc tế, trải nghiệm văn hóa mới - tất cả miễn phí! 🌈✈️</li>
-              <li>🌱 <strong>EU - Siêu anh hùng bảo vệ Trái Đất!</strong> Họ đang dẫn đầu cuộc chiến chống biến đổi khí hậu với mục tiêu "Net Zero" vào 2050. Thật "xanh sạch đẹp"! 🦸‍♂️🌍</li>
-              <li>🤖 <strong>EU đang đầu tư mạnh vào AI và công nghệ tương lai.</strong> Imagine: robot phục vụ trong nhà hàng, xe tự lái trên đường phố - tương lai đã ở đây rồi! 🚗💻</li>
-              <li>🍕 <strong>Ẩm thực EU - thiên đường cho foodies!</strong> Từ pizza Ý, tapas Tây Ban Nha đến bánh mì Pháp. Một chuyến food tour qua 27 nước = 27 hương vị độc đáo! 😋🍽️</li>
+              <li>❤️ Chăm sóc bằng tình cảm chân thành</li>
+              <li>🤝 Đặt mình vào vị trí của người khác để thấu hiểu</li>
+              <li>🎁 San sẻ, giúp đỡ về vật chất và tinh thần</li>
+            </ul>
+            <p className="ml-4 font-semibold mt-2">Biểu hiện cụ thể: 👥</p>
+            <ul className="list-disc list-inside ml-8">
+              <li>👂 Lắng nghe, động viên, an ủi</li>
+              <li>💫 Chia sẻ niềm vui, nỗi buồn</li>
+              <li>🤲 Giúp đỡ người gặp khó khăn</li>
             </ul>
           </div>
 
-          {/* Phần mới bổ sung */}
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold">🌏 <strong>B. Vị trí địa lý, hình dạng và kích thước lãnh thổ của Châu Á</strong></h3>
-            <p className="ml-4">Châu Á là châu lục rộng lớn nhất thế giới</p>
+          {/* Bài 3: Học tập tự giác, tích cực */}
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold">📚 <strong>3. Học Tập Tự Giác, Tích Cực</strong></h3>
+            <p className="ml-4">
+              Học tập tự giác, tích cực là chủ động, nỗ lực trong việc học mà không cần ai nhắc nhở.
+            </p>
+            <p className="ml-4 font-semibold mt-2">Biểu hiện của học tập tự giác: 🎯</p>
             <ul className="list-disc list-inside ml-8">
-              <li>📏 Diện tích khoảng 44,4 triệu km² (bao gồm cả các đảo)</li>
-              <li>🤝 Tiếp giáp với 2 châu lục (Châu Âu và Châu Phi) và 3 đại dương (Thái Bình Dương, Ấn Độ Dương, Bắc Băng Dương)</li>
-              <li>🧩 Hình dạng: khối rõ rệt</li>
-              <li>📐 Kích thước:
-                <ul className="list-disc list-inside ml-8">
-                  <li>Bắc-Nam: từ sát Xích đạo lên quá vòng cực Bắc, khoảng 8.500 km</li>
-                  <li>Đông-Tây: nơi rộng nhất từ ven Địa Trung Hải tới ven Thái Bình Dương, khoảng 9.200 km</li>
-                </ul>
-              </li>
+              <li>🎯 Có mục đích và động cơ học tập đúng đắn</li>
+              <li>✍️ Chủ động thực hiện nhiệm vụ học tập</li>
+              <li>🗣️ Tích cực tham gia xây dựng bài</li>
+              <li>💪 Kiên trì vượt khó trong học tập</li>
+              <li>📅 Xây dựng và thực hiện kế hoạch học tập phù hợp</li>
             </ul>
-          </div>
-
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold">Thông tin thú vị</h3>
+            <p className="ml-4 font-semibold mt-2">Ý nghĩa: ⭐</p>
             <ul className="list-disc list-inside ml-8">
-              <li>🧊 Mũi Chelyuskin (Nga) - "Ông vua phương Bắc" của châu Á! Nằm ở vĩ độ 77°43' Bắc, nó là điểm cực Bắc trên đất liền của châu lục. Bạn có thể tưởng tượng một nơi lạnh đến mức nào không? 🥶❄️</li>
-              <li>🏝️ Đảo Rondo (Indonesia) - "Nàng thơ phương Nam" của châu Á! Nằm ở vĩ độ 11°00'46" Nam, đây là điểm cực Nam của châu lục. Một thiên đường nhiệt đới giữa lòng đại dương! 🌴🥥</li>
-              <li>🌊 Châu Á có đường bờ biển dài nhất thế giới - 62.800 km! Nếu bạn đi dọc bờ biển này mỗi ngày 10km, bạn sẽ mất gần 17 năm để đi hết! Một chuyến phiêu lưu tuyệt vời, phải không? 🏄‍♀️🚶‍♂️</li>
-            </ul>
-          </div>
-
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold">🏔️ <strong>C. Đặc điểm địa hình của Châu Á và ý nghĩa đối với việc sử dụng và bảo vệ tự nhiên</strong></h3>
-            <ul className="list-disc list-inside ml-8">
-              <li>Đa dạng như một bảo tàng địa chất sống: núi cao, sơn nguyên đồ sộ, cao nguyên và đồng bằng rộng lớn</li>
-              <li>Bề mặt địa hình bị chia cắt mạnh như một bức tranh ghép khổng lồ</li>
-            </ul>
-
-            <p className="ml-4">🗺️ Chia thành các khu vực:</p>
-            <ul className="list-disc list-inside ml-8">
-              <li>Trung tâm: "Nóc nhà thế giới" với các dãy núi cao nhất hành tinh (Thiên Sơn, Côn Luân, Himalaya)</li>
-              <li>Phía bắc: Vùng đất phẳng lì với đồng bằng và cao nguyên thấp</li>
-              <li>Phía đông: "Bậc thang khổng lồ" thấp dần về phía biển, gồm núi, cao nguyên và đồng bằng ven biển</li>
-              <li>Phía nam và tây nam: Bức tranh đa sắc với dãy núi trẻ, sơn nguyên và đồng bằng xen kẽ</li>
-            </ul>
-
-            <p className="ml-4">🌿 Ý nghĩa đối với việc sử dụng và bảo vệ tự nhiên:</p>
-            <ul className="list-disc list-inside ml-8">
-              <li>Núi cao = Thử thách cho giao thông, sản xuất và cuộc sống</li>
-              <li>Địa hình chia cắt = Cảnh báo đỏ cho xói mòn khi khai thác</li>
-              <li>Cao nguyên, đồng bằng rộng lớn = Thiên đường cho sản xuất và định cư</li>
-            </ul>
-          </div>
-
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold">Thông tin thú vị</h3>
-            <ul className="list-disc list-inside ml-8">
-              <li>🏆 Châu Á - "Vua của các đỉnh cao"! 8/14 ngọn núi trên 8000m của thế giới đều nằm ở dãy Himalaya. Bạn có muốn thử sức chinh phục không? 🧗‍♂️🏔️</li>
-              <li>💧 Hồ Baikal (Nga) - "Giếng nước ngọt" của hành tinh! Sâu nhất, chứa nhiều nước nhất thế giới. Bạn có thể tưởng tượng một hồ chứa 20% lượng nước ngọt của Trái Đất không? 🌊🌍</li>
-              <li>🏜️ Sa mạc Gobi - "Quái vật cát" của châu Á! Trải dài qua Mông Cổ và Trung Quốc, lớn thứ 5 thế giới. Một chuyến phiêu lưu qua sa mạc, bạn dám thử không? 🐫🌵</li>
+              <li>🏆 Giúp đạt kết quả cao trong học tập</li>
+              <li>🌱 Rèn luyện tính tự lập, ý chí kiên cường</li>
+              <li>🌟 Tạo nền tảng vững chắc cho tương lai</li>
             </ul>
           </div>
         </div>
@@ -264,85 +301,77 @@ const QuizDashboard = () => {
         <div className="absolute top-16 left-0 right-0 mx-auto w-full max-w-3xl bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg z-10 overflow-y-auto max-h-[80vh]">
           <h2 className="text-2xl font-bold mb-4">Tự Luận</h2>
 
-          {/* Câu hỏi về GDP và GDP bình quân */}
-          <h3 className="font-semibold text-xl mb-4">📊 <strong>Câu hỏi:</strong> So sánh GDP và GDP bình quân đầu người của EU với các trung tâm kinh tế lớn khác trên thế giới năm 2020. Từ đó rút ra nhận xét về vị thế kinh tế của EU.</h3>
+          <div className="mb-8">
+            <p className="font-semibold text-xl mb-2">✨ <strong>Câu 1: Truyền thống quê hương - Lễ hội Cầu ngư</strong></p>
+            <p className="mt-2">
+              Quê hương tôi có một truyền thống rất đặc biệt - đó là Lễ hội Cầu ngư 🎏
+            </p>
+            <ol className="list-decimal list-inside ml-6 mt-2">
+              <li>
+                <span className="font-semibold">Thời gian và ý nghĩa <Calendar className="inline-block" />:</span> Được tổ chức vào đầu năm mới, cầu mong một năm bình an và đánh bắt được nhiều tôm cá.
+              </li>
+              <li className="mt-2">
+                <span className="font-semibold">Các hoạt động chính <Anchor className="inline-block" />:</span>
+                <ul className="list-disc ml-8">
+                  <li>Ngày 1: Lễ cúng tại đình làng</li>
+                  <li>Ngày 2: Phần hội với trò chơi dân gian</li>
+                  <li>Ngày 3: Đoàn thuyền ra khơi</li>
+                </ul>
+              </li>
+              <li className="mt-2">
+                <span className="font-semibold">Ý nghĩa văn hóa <Heart className="inline-block" />:</span> Thể hiện đức tin, tăng cường đoàn kết và giới thiệu văn hóa địa phương.
+              </li>
+            </ol>
+          </div>
 
-          <h4 className="font-semibold text-xl mb-2 mt-6">💡 <strong>Trả lời:</strong></h4>
-          <p className="mt-2">So sánh GDP (tỷ USD):</p>
-          <ol className="list-decimal list-inside ml-6 mt-2">
-            <li>🥇 <span className="font-semibold">Hoa Kỳ:</span> 20.937</li>
-            <li>🥈 <span className="font-semibold">EU:</span> 15.276</li>
-            <li>🥉 <span className="font-semibold">Trung Quốc:</span> 14.723</li>
-            <li>🏅 <span className="font-semibold">Nhật Bản:</span> 4.975</li>
-          </ol>
+          <div className="mb-8">
+            <p className="font-semibold text-xl mb-2">💫 <strong>Câu 2: Tấm gương về lòng nhân ái - Cô giáo Trần Thị Ngọc Trâm</strong></p>
+            <ol className="list-decimal list-inside ml-6 mt-2">
+              <li>
+                <span className="font-semibold">Công việc và môi trường <School className="inline-block" />:</span> Cô giáo tình nguyện dạy học ở vùng cao Sơn La.
+              </li>
+              <li className="mt-2">
+                <span className="font-semibold">Những việc làm đáng quý <Gift className="inline-block" />:</span>
+                <ul className="list-disc ml-8">
+                  <li>Quyên góp quần áo, sách vở</li>
+                  <li>Tổ chức bữa ăn miễn phí</li>
+                  <li>Mở lớp học tình thương</li>
+                  <li>Vận động học bổng</li>
+                </ul>
+              </li>
+              <li className="mt-2">
+                <span className="font-semibold">Bài học rút ra <Lightbulb className="inline-block" />:</span> Về lòng nhân ái, tinh thần cống hiến và sự quan tâm đến người khác.
+              </li>
+            </ol>
+          </div>
 
-          <p className="mt-4">So sánh GDP bình quân đầu người (USD/năm):</p>
-          <ol className="list-decimal list-inside ml-6 mt-2">
-            <li>🥇 <span className="font-semibold">Hoa Kỳ:</span> 63.544</li>
-            <li>🥈 <span className="font-semibold">Nhật Bản:</span> 39.539</li>
-            <li>🥉 <span className="font-semibold">EU:</span> 34.115</li>
-            <li>🏅 <span className="font-semibold">Trung Quốc:</span> 10.500</li>
-          </ol>
+          <div>
+            <p className="font-semibold text-xl mb-2">🌟 <strong>Câu 3: Tấm gương học tập - Nguyễn Văn An</strong></p>
+            <ol className="list-decimal list-inside ml-6 mt-2">
+              <li>
+                <span className="font-semibold">Hoàn cảnh <Home className="inline-block" />:</span> Gia đình khó khăn, bố mẹ là công nhân.
+              </li>
+              <li className="mt-2">
+                <span className="font-semibold">Nỗ lực học tập <Book className="inline-block" />:</span>
+                <ul className="list-disc ml-8">
+                  <li>Dậy sớm ôn bài</li>
+                  <li>Tự học thêm tiếng Anh</li>
+                  <li>Tham gia câu lạc bộ học thuật</li>
+                  <li>Đạt giải Nhất môn Toán cấp thành phố</li>
+                </ul>
+              </li>
+              <li className="mt-2">
+                <span className="font-semibold">Bài học kinh nghiệm <Star className="inline-block" />:</span> Ý chí vươn lên, tinh thần tự giác và quản lý thời gian hiệu quả.
+              </li>
+            </ol>
+          </div>
 
-          <h4 className="mt-6 font-semibold">🌟 <strong>Nhận xét:</strong></h4>
-          <ul className="list-disc list-inside ml-6 mt-2">
-            <li>🏆 EU là "cầu thủ" kinh tế hạng 3 thế giới về tổng GDP, sau Hoa Kỳ và Trung Quốc.</li>
-            <li>💰 GDP bình quân đầu người của EU ở mức "trung bình khá": cao hơn Trung Quốc nhưng thấp hơn Nhật Bản và Hoa Kỳ.</li>
-            <li>🌍 EU có vị thế kinh tế quan trọng, là 1 trong 4 "siêu anh hùng" kinh tế toàn cầu cùng Hoa Kỳ, Trung Quốc và Nhật Bản.</li>
-          </ul>
-
-          {/* Câu hỏi về vị trí địa lý của châu Á */}
-          <h3 className="font-semibold text-xl mb-4 mt-8">📝 <strong>Câu hỏi:</strong> Trình bày vị trí địa lý của châu Á và phân tích ý nghĩa của vị trí này đối với sự phát triển kinh tế - xã hội của châu lục.</h3>
-
-          <h4 className="font-semibold text-xl mb-2 mt-6">💡 <strong>Trả lời:</strong></h4>
-          <p className="mt-2">Vị trí địa lý của châu Á:</p>
-          <ul className="list-disc list-inside ml-6 mt-2">
-            <li>🏆 Là "ông hoàng" của các châu lục về diện tích</li>
-            <li>🤝 Có 2 "người hàng xóm" châu lục: Châu Âu và Châu Phi</li>
-            <li>🌊 Có 3 "người bạn" đại dương: Thái Bình Dương, Ấn Độ Dương và Bắc Băng Dương</li>
-            <li>🌡️ Trải dài từ vùng nóng bỏng gần Xích đạo đến vùng lạnh giá quá vòng cực Bắc</li>
-          </ul>
-
-          <p className="mt-4">Ý nghĩa đối với sự phát triển kinh tế - xã hội:</p>
-          <ul className="list-disc list-inside ml-6 mt-2">
-            <li>🏞️ Diện tích "khổng lồ" = Kho báu tài nguyên đa dạng + Vườn sinh thái phong phú</li>
-            <li>🚢 Tiếp giáp nhiều châu lục và đại dương = Cửa ngõ giao thương quốc tế + Thiên đường kinh tế biển</li>
-            <li>🌾 Trải dài theo vĩ độ = Thiên đường khí hậu đa dạng = Vựa lúa + Bảo tàng văn hóa sống</li>
-            <li>🌉 Cầu nối giữa các châu lục = Trung tâm giao thương và văn hóa toàn cầu</li>
-          </ul>
-
-          {/* Câu hỏi về địa hình châu Á */}
-          <h3 className="font-semibold text-xl mb-4 mt-8">📝 <strong>Câu hỏi:</strong> Phân tích ảnh hưởng của đặc điểm địa hình châu Á đối với sự phát triển kinh tế - xã hội của châu lục này.</h3>
-
-          <h4 className="font-semibold text-xl mb-2 mt-6">💡 <strong>Trả lời:</strong></h4>
-          <p className="mt-2">Ảnh hưởng tích cực:</p>
-          <ul className="list-disc list-inside ml-6 mt-2">
-            <li>🏭 Địa hình đa dạng = Kho báu khoáng sản phong phú = Động lực cho công nghiệp</li>
-            <li>🌾 Cao nguyên + Đồng bằng rộng lớn = Thiên đường nông nghiệp + Đô thị hiện đại</li>
-            <li>⚡ Núi cao = Tiềm năng thủy điện khổng lồ + Thiên đường du lịch mạo hiểm</li>
-          </ul>
-
-          <p className="mt-4">Ảnh hưởng tiêu cực:</p>
-          <ul className="list-disc list-inside ml-6 mt-2">
-            <li>🚗 Núi cao + Hiểm trở = Thách thức cho giao thông + Cơ sở hạ tầng</li>
-            <li>🌋 Địa hình chia cắt = Nguy cơ xói mòn, sạt lở = Chi phí bảo vệ môi trường cao</li>
-            <li>💰 Chênh lệch địa hình = Phát triển không đồng đều giữa các vùng</li>
-          </ul>
-
-          <p className="mt-4">Giải pháp thích ứng:</p>
-          <ul className="list-disc list-inside ml-6 mt-2">
-            <li>🚄 Phát triển giao thông đa dạng (đường bộ, đường sắt, hàng không) = Kết nối mọi vùng miền</li>
-            <li>🌱 Áp dụng công nghệ canh tác tiên tiến = Chinh phục đồi núi</li>
-            <li>🏙️ Quy hoạch đô thị + công nghiệp = Phù hợp với đặc thù địa hình</li>
-            <li>🌿 Tăng cường bảo vệ môi trường = Chống xói mòn + sạt lở</li>
-          </ul>
         </div>
       )}
 
-
       <Card className="w-full max-w-3xl bg-white/80 backdrop-blur-sm shadow-xl z-0">
         <CardHeader className="text-center">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">Địa lý Lớp 7: Ôn Tập Kiến Thức</h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">Giáo dục Công dân - 7: Ôn Tập Kiến Thức</h1>
           <div className="flex justify-center space-x-2 mb-4">
             <MapPin className="text-blue-500" />
             <Ship className="text-green-500" />

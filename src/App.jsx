@@ -17,7 +17,6 @@ import {
   Heart,
   Bike,
   Users,
-  Heart,
   Star
 } from 'lucide-react';
 

@@ -344,81 +344,57 @@ const EnglishReview = () => {
           
           {activeSection === 'grammar' && (
             <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
-              
               {/* Present Simple Section */}
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h2 className="text-2xl font-semibold text-blue-600 mb-4">1. Thì Hiện Tại Đơn (Present Simple)</h2>
                 
                 <div className="space-y-4">
-                  {/* Usage */}
+                  {/* Enhanced Usage Section */}
                   <div className="bg-blue-50 p-4 rounded-lg">
                     <h3 className="font-medium text-blue-700 mb-2">🎯 Cách dùng chính:</h3>
-                    <ul className="list-disc pl-5 space-y-2">
-                      <li>Diễn tả thói quen, hành động lặp đi lặp lại
+                    <ul className="list-disc pl-5 space-y-3">
+                      <li>
+                        <strong className="text-blue-800">Diễn tả sự thật hiển nhiên, quy luật tự nhiên</strong>
                         <div className="ml-4 mt-1 text-gray-600">
-                          ví dụ: I usually get up at 6 AM. (Tôi thường thức dậy lúc 6 giờ sáng)
+                          - Water <strong>boils</strong> at 100°C. (Nước sôi ở 100 độ C)<br />
+                          - The Earth <strong>revolves</strong> around the Sun. (Trái đất quay quanh mặt trời)
                         </div>
                       </li>
-                      <li>Diễn tả sự thật hiển nhiên
+                      <li>
+                        <strong className="text-blue-800">Thói quen, hành động lặp đi lặp lại trong hiện tại</strong>
                         <div className="ml-4 mt-1 text-gray-600">
-                          ví dụ: The sun rises in the east. (Mặt trời mọc ở phía đông)
+                          - I <strong>take</strong> the bus to work. (Tôi đi làm bằng xe buýt)<br />
+                          - She <strong>teaches</strong> English every Monday. (Cô ấy dạy tiếng Anh vào mỗi thứ Hai)
+                        </div>
+                      </li>
+                      <li>
+                        <strong className="text-blue-800">Khả năng, sở thích</strong>
+                        <div className="ml-4 mt-1 text-gray-600">
+                          - He <strong>speaks</strong> three languages. (Anh ấy nói được ba thứ tiếng)<br />
+                          - I <strong>love</strong> classical music. (Tôi thích nhạc cổ điển)
+                        </div>
+                      </li>
+                      <li>
+                        <strong className="text-blue-800">Lịch trình, thời gian biểu cố định</strong>
+                        <div className="ml-4 mt-1 text-gray-600">
+                          - The train <strong>leaves</strong> at 8:00 AM. (Tàu khởi hành lúc 8 giờ sáng)<br />
+                          - The museum <strong>opens</strong> at 9 AM every day. (Bảo tàng mở cửa lúc 9 giờ sáng mỗi ngày)
                         </div>
                       </li>
                     </ul>
                   </div>
 
-                  {/* Rules for adding s/es */}
+                  {/* Condensed Rules Section */}
                   <div className="bg-green-50 p-4 rounded-lg">
-                    <h3 className="font-medium text-green-700 mb-2">📝 Quy tắc thêm s/es:</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <h3 className="font-medium text-green-700 mb-2 text-sm">📝 Quy tắc thêm s/es:</h3>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
                       <div>
-                        <h4 className="font-medium">Thêm 'es' khi động từ kết thúc bằng:</h4>
-                        <ul className="list-disc pl-5 mt-2">
-                          <li>ch → teaches</li>
-                          <li>s, ss → passes</li>
-                          <li>sh → wishes</li>
-                          <li>x → fixes</li>
-                          <li>o → goes</li>
-                        </ul>
+                        <p className="font-medium">Thêm 'es':</p>
+                        <p className="text-gray-600">ch, s, ss, sh, x, o</p>
                       </div>
                       <div>
-                        <h4 className="font-medium">Động từ tận cùng bằng 'y':</h4>
-                        <ul className="list-disc pl-5 mt-2">
-                          <li>Nguyên âm + y → thêm 's'
-                            <div className="text-gray-600">play → plays</div>
-                          </li>
-                          <li>Phụ âm + y → đổi y thành i + es
-                            <div className="text-gray-600">study → studies</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pronunciation */}
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <h3 className="font-medium text-purple-700 mb-2">🗣️ Cách phát âm đuôi s/es:</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div>
-                        <h4 className="font-medium">/s/</h4>
-                        <p className="text-gray-600">Sau các âm: /k/, /t/, /p/, /θ/, /f/</p>
-                        <div className="mt-1">
-                          works, stops, laughs
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium">/ɪz/</h4>
-                        <p className="text-gray-600">Sau các âm: /s/, /z/, /ʃ/, /tʃ/, /dʒ/</p>
-                        <div className="mt-1">
-                          watches, kisses, changes
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium">/z/</h4>
-                        <p className="text-gray-600">Sau các âm còn lại</p>
-                        <div className="mt-1">
-                          plays, runs, sings
-                        </div>
+                        <p className="font-medium">Động từ tận cùng 'y':</p>
+                        <p className="text-gray-600">Nguyên âm + y → +s<br />Phụ âm + y → y→i+es</p>
                       </div>
                     </div>
                   </div>
@@ -430,86 +406,104 @@ const EnglishReview = () => {
                 <h2 className="text-2xl font-semibold text-blue-600 mb-4">2. Thì Quá Khứ Đơn (Past Simple)</h2>
                 
                 <div className="space-y-4">
-                  {/* Formation */}
+                  {/* Enhanced Usage Section */}
                   <div className="bg-blue-50 p-4 rounded-lg">
-                    <h3 className="font-medium text-blue-700 mb-2">🎯 Cách dùng:</h3>
-                    <p>Diễn tả hành động đã xảy ra và kết thúc trong quá khứ</p>
-                    <div className="mt-2">
-                      <p className="font-medium">Ví dụ:</p>
-                      <ul className="list-disc pl-5">
-                        <li>I watched TV last night. (Tôi đã xem TV tối qua)</li>
-                        <li>She visited Paris last summer. (Cô ấy đã thăm Paris mùa hè năm ngoái)</li>
-                      </ul>
-                    </div>
+                    <h3 className="font-medium text-blue-700 mb-2">🎯 Cách dùng chính:</h3>
+                    <ul className="list-disc pl-5 space-y-3">
+                      <li>
+                        <strong className="text-blue-800">Hành động đã xảy ra và kết thúc tại một thời điểm xác định trong quá khứ</strong>
+                        <div className="ml-4 mt-1 text-gray-600">
+                          - I visited Paris <strong>last summer</strong>. (Tôi đã thăm Paris mùa hè năm ngoái)<br />
+                          - She graduated <strong>in 2020</strong>. (Cô ấy đã tốt nghiệp vào năm 2020)
+                        </div>
+                      </li>
+                      <li>
+                        <strong className="text-blue-800">Chuỗi hành động xảy ra liên tiếp trong quá khứ</strong>
+                        <div className="ml-4 mt-1 text-gray-600">
+                          - I <strong>woke up</strong>, <strong>had</strong> breakfast, and <strong>went</strong> to work. (Tôi thức dậy, ăn sáng và đi làm)<br />
+                          - He <strong>opened</strong> the door, <strong>walked</strong> in, and <strong>sat</strong> down.
+                        </div>
+                      </li>
+                      <li>
+                        <strong className="text-blue-800">Thói quen trong quá khứ (thường đi với used to)</strong>
+                        <div className="ml-4 mt-1 text-gray-600">
+                          - I <strong>used to play</strong> football every weekend. (Tôi đã từng chơi bóng đá mỗi cuối tuần)<br />
+                          - She <strong>used to live</strong> in London. (Cô ấy đã từng sống ở London)
+                        </div>
+                      </li>
+                    </ul>
                   </div>
 
-                  {/* Pronunciation of -ed */}
+                  {/* Condensed Rules Section */}
                   <div className="bg-green-50 p-4 rounded-lg">
-                    <h3 className="font-medium text-green-700 mb-2">🗣️ Cách phát âm đuôi -ed:</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div>
-                        <h4 className="font-medium">/ɪd/</h4>
-                        <p className="text-gray-600">Sau âm /t/ và /d/</p>
-                        <div className="mt-1">
-                          wanted, needed
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium">/t/</h4>
-                        <p className="text-gray-600">Sau các âm vô thanh: /k/, /p/, /s/, /ʃ/, /tʃ/, /f/</p>
-                        <div className="mt-1">
-                          looked, stopped, watched
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium">/d/</h4>
-                        <p className="text-gray-600">Sau các âm còn lại</p>
-                        <div className="mt-1">
-                          played, lived, studied
-                        </div>
-                      </div>
+                    <h3 className="font-medium text-green-700 mb-2 text-sm">🗣️ Cách phát âm -ed:</h3>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      <div>/ɪd/ sau /t/, /d/</div>
+                      <div>/t/ sau âm vô thanh</div>
+                      <div>/d/ các âm còn lại</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Simple Sentences Section */}
+              {/* Enhanced Simple Sentences Section */}
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h2 className="text-2xl font-semibold text-blue-600 mb-4">3. Câu Đơn (Simple Sentences)</h2>
                 
                 <div className="bg-yellow-50 p-4 rounded-lg">
-                  <h3 className="font-medium text-yellow-700 mb-2">📝 Cấu trúc cơ bản:</h3>
-                  <div className="space-y-3">
+                  <h3 className="font-medium text-yellow-700 mb-2">📝 Cấu trúc với ví dụ:</h3>
+                  <div className="space-y-4">
                     <div>
-                      <p className="font-medium">S + V</p>
-                      <p className="text-gray-600">I read. (Tôi đọc.)</p>
+                      <p className="font-medium mb-2">Hiện tại đơn:</p>
+                      <ul className="space-y-2">
+                        <li>
+                          <span className="bg-red-200 px-1">My sister</span> 
+                          <span className="bg-green-200 px-1">teaches</span> 
+                          <span className="bg-blue-200 px-1">English</span>.
+                        </li>
+                        <li>
+                          <span className="bg-red-200 px-1">The sun</span> 
+                          <span className="bg-green-200 px-1">rises</span> 
+                          <span className="bg-blue-200 px-1">in the east</span>.
+                        </li>
+                      </ul>
                     </div>
                     <div>
-                      <p className="font-medium">S + V + O</p>
-                      <p className="text-gray-600">I read books. (Tôi đọc sách.)</p>
+                      <p className="font-medium mb-2">Quá khứ đơn:</p>
+                      <ul className="space-y-2">
+                        <li>
+                          <span className="bg-red-200 px-1">They</span> 
+                          <span className="bg-green-200 px-1">visited</span> 
+                          <span className="bg-blue-200 px-1">Paris last summer</span>.
+                        </li>
+                        <li>
+                          <span className="bg-red-200 px-1">I</span> 
+                          <span className="bg-green-200 px-1">finished</span> 
+                          <span className="bg-blue-200 px-1">my homework yesterday</span>.
+                        </li>
+                      </ul>
                     </div>
-                    <div>
-                      <p className="font-medium">S + V + O + Adv</p>
-                      <p className="text-gray-600">I read books every day. (Tôi đọc sách mỗi ngày.)</p>
+                    <div className="text-sm mt-2">
+                      <p className="font-medium">Chú thích:</p>
+                      <p><span className="bg-red-200 px-1">Chủ ngữ (S)</span> - 
+                         <span className="bg-green-200 px-1">Động từ (V)</span> - 
+                         <span className="bg-blue-200 px-1">Tân ngữ/Trạng ngữ (O/Adv)</span></p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Verb + -ing Section */}
+              {/* Verb + -ing Section remains mostly the same */}
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h2 className="text-2xl font-semibold text-blue-600 mb-4">4. Động từ thích/ghét + V-ing</h2>
-                
                 <div className="bg-pink-50 p-4 rounded-lg">
                   <h3 className="font-medium text-pink-700 mb-2">🎯 Cách dùng:</h3>
-                  <p>Dùng để nói về sở thích hoặc những điều thích/không thích</p>
                   <div className="mt-3">
-                    <p className="font-medium">Các động từ thường gặp:</p>
                     <ul className="list-disc pl-5">
-                      <li>like + V-ing: I like reading books. (Tôi thích đọc sách.)</li>
-                      <li>love + V-ing: She loves dancing. (Cô ấy rất thích khiêu vũ.)</li>
-                      <li>enjoy + V-ing: They enjoy playing football. (Họ thích chơi bóng đá.)</li>
-                      <li>hate + V-ing: He hates waiting. (Anh ấy ghét phải chờ đợi.)</li>
+                      <li>like + V-ing: I like reading books.</li>
+                      <li>love + V-ing: She loves dancing.</li>
+                      <li>enjoy + V-ing: They enjoy playing football.</li>
+                      <li>hate + V-ing: He hates waiting.</li>
                     </ul>
                   </div>
                 </div>
@@ -529,7 +523,6 @@ const EnglishReview = () => {
                   </iframe>
                 </div>
               </div>
-
             </div>
           )}
         </CardContent>

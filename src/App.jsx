@@ -18,7 +18,6 @@ import {
   Star,
   BookText,
   Atom,
-  FloppyDisk,
   TestTube,
   Microscope,
   Lightbulb,
@@ -172,7 +171,7 @@ const EnglishReview = () => {
                     {/* 1. Những con số ấn tượng */}
                     <div className="mb-4">
                       <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
-                        <FloppyDisk size={20} />
+                        <Lightbulb size={20} />
                         1. Những con số ấn tượng
                       </h4>
                       <ul className="list-disc list-inside space-y-2">

@@ -14,7 +14,8 @@ import {
 } from './components/ui/card';
 
 // Icons
-import { Book, HelpCircle } from 'lucide-react';
+import { Book, HelpCircle, Volume2 } from 'lucide-react';
+
 
 const EnglishReview = () => {
   const [activeSection, setActiveSection] = useState('none'); // 'none', 'phonetics', or 'guide'

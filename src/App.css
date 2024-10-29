@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --primary: #2563eb;
@@ -9,9 +9,7 @@
   --card-background: #ffffff;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
-  --radius: 0.5rem; /* Add this line */
 }
-
 
 body {
   margin: 0;

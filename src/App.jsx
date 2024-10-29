@@ -59,16 +59,230 @@ const EnglishReview = () => {
               {activeSection === 'element' ? 'Đóng' : 'Nguyên Tố'}
             </button>
             <button
-              onClick={() => toggleSection('grammar')}
+              onClick={() => toggleSection('periodicTable')}
               className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
-                ${activeSection === 'grammar'
+                ${activeSection === 'periodicTable'
                   ? 'bg-blue-600 text-white' 
                   : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
             >
-              <BookText size={20} />
-              {activeSection === 'grammar' ? 'Đóng' : 'Ngữ Pháp'}
+              <Grid size={20} />
+              {activeSection === 'periodicTable' ? 'Đóng' : 'Bảng Tuần Hoàn'}
             </button>
           </div>
+
+          {/* Periodic Table Section */}
+          {activeSection === 'periodicTable' && (
+            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
+              <div className="space-y-6">
+                {/* Section: BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HÓA HỌC */}
+                <div className="p-6 rounded-lg shadow-sm bg-blue-50">
+                  <h2 className="text-2xl font-semibold text-red-600 flex items-center gap-2 mb-4">
+                    <Grid size={24} className="text-red-500" />
+                    BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HÓA HỌC
+                  </h2>
+
+                  {/* I. Kiến thức trọng tâm */}
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">I. Kiến thức trọng tâm</h3>
+
+                    {/* 1. Nguyên tắc xây dựng bảng tuần hoàn */}
+                    <div className="mb-4 bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <TestTube size={20} />
+                        1. Nguyên tắc xây dựng bảng tuần hoàn
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Nguyên tắc cơ bản:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Sắp xếp theo chiều tăng dần của điện tích hạt nhân</li>
+                            <li>Các nguyên tố cùng hàng có cùng số lớp electron</li>
+                            <li>Các nguyên tố cùng cột có tính chất gần giống nhau</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Lịch sử:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>1869: Men-đê-lê-ép xây dựng bảng tuần hoàn đầu tiên</li>
+                            <li>Dựa trên khối lượng nguyên tử tăng dần</li>
+                            <li>Hiện nay gồm 118 nguyên tố</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 2. Cấu tạo bảng tuần hoàn */}
+                    <div className="mb-4 bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <Microscope size={20} />
+                        2. Cấu tạo bảng tuần hoàn
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Ô nguyên tố:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Chứa thông tin: ký hiệu, tên, số hiệu, khối lượng nguyên tử</li>
+                            <li>Số hiệu = Số proton = Số electron</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Chu kỳ:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>7 chu kỳ ngang, đánh số 1-7</li>
+                            <li>Chu kỳ nhỏ: 1, 2, 3</li>
+                            <li>Chu kỳ lớn: 4, 5, 6, 7</li>
+                            <li>Số thứ tự chu kỳ = Số lớp electron</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Nhóm:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>8 nhóm A (IA - VIIIA)</li>
+                            <li>8 nhóm B (IB - VIIIB)</li>
+                            <li>Số thứ tự nhóm A = Số electron lớp ngoài cùng</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 3. Vị trí các loại nguyên tố */}
+                    <div className="bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        3. Vị trí các loại nguyên tố
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Kim loại:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Khoảng 90/118 nguyên tố</li>
+                            <li>Vị trí: góc dưới bên trái</li>
+                            <li>Gồm: IA, IIA, IIIA và một số IVA-VIA</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Phi kim:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Dưới 20/118 nguyên tố</li>
+                            <li>Vị trí: góc trên bên phải</li>
+                            <li>Gồm: VIIA, VIA và một số IVA, IIIA</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Khí hiếm:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>7 nguyên tố nhóm VIIIA</li>
+                            <li>Electron lớp ngoài cùng bền vững</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* II. Thông tin thú vị và ứng dụng thực tế */}
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">II. Thông tin thú vị và ứng dụng thực tế</h3>
+
+                    {/* 1. Ứng dụng của các kim loại */}
+                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        1. Ứng dụng của các kim loại
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Nhôm (Al): Màng bọc thực phẩm</li>
+                        <li>Sắt (Fe): Công trình xây dựng</li>
+                        <li>Đồng (Cu): Dây dẫn điện</li>
+                        <li>Vàng (Au): Trang sức</li>
+                      </ul>
+                    </div>
+
+                    {/* 2. Ứng dụng của phi kim */}
+                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        2. Ứng dụng của phi kim
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Oxygen (O): Hô hấp, quang hợp</li>
+                        <li>Chlorine (Cl): Khử trùng nước</li>
+                        <li>Bromine (Br): Thuốc tẩy trắng</li>
+                        <li>Sulfur (S): Sản xuất axit</li>
+                      </ul>
+                    </div>
+
+                    {/* 3. Ứng dụng của khí hiếm */}
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        3. Ứng dụng của khí hiếm
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Helium (He): Khinh khí cầu</li>
+                        <li>Argon (Ar): Đèn LED</li>
+                        <li>Neon (Ne): Đèn quảng cáo</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* III. Câu hỏi tự luyện tập và đáp án */}
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">III. Câu hỏi tự luyện tập và đáp án</h3>
+
+                    {/* Câu hỏi */}
+                    <div className="mb-4 bg-purple-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Câu hỏi</h4>
+                      <ol className="list-decimal list-inside space-y-2">
+                        <li>Tại sao bảng tuần hoàn được gọi là "tuần hoàn"?</li>
+                        <li>Số thứ tự chu kỳ và số thứ tự nhóm A cho ta biết thông tin gì?</li>
+                        <li>Làm sao để xác định một nguyên tố là kim loại hay phi kim?</li>
+                        <li>Tại sao khí hiếm ít tham gia phản ứng hóa học?</li>
+                      </ol>
+                    </div>
+
+                    {/* Đáp án */}
+                    <div className="bg-purple-50 p-4 rounded-lg text-sm">
+                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Đáp án</h4>
+                      <ol className="list-decimal list-inside space-y-4">
+                        <li>
+                          <strong>Vì:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Tính chất các nguyên tố lặp lại theo chu kỳ</li>
+                            <li>Cấu trúc electron lặp lại theo quy luật</li>
+                            <li>Nguyên tố cùng nhóm có tính chất tương tự</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Số thứ tự:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Chu kỳ = Số lớp electron</li>
+                            <li>Nhóm A = Số electron lớp ngoài cùng</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Xác định dựa vào:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Vị trí trong bảng tuần hoàn</li>
+                            <li>Kim loại: góc dưới bên trái</li>
+                            <li>Phi kim: góc trên bên phải</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Khí hiếm ít phản ứng vì:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Lớp electron ngoài cùng bền vững</li>
+                            <li>Có 8 electron ở lớp ngoài (trừ He có 2e)</li>
+                            <li>Không có xu hướng nhận/nhường electron</li>
+                          </ul>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
 
           {/* Element Section */}
           {activeSection === 'element' && (
@@ -526,13 +740,7 @@ const EnglishReview = () => {
             </div>
           )}
 
-          {/* Grammar Section */}
-          {activeSection === 'grammar' && (
-            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
-              {/* Your existing Grammar content goes here */}
-              <p>Grammar content...</p>
-            </div>
-          )}
+          
         </CardContent>
       </Card>
     </div>

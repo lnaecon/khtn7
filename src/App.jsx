@@ -997,25 +997,23 @@ const EnglishReview = () => {
                     </div>
                   </div>
                 </div>
-
                 {/* Video Section */}
                 <div className="mt-8">
                   <h2 className="text-xl font-semibold text-blue-600 mb-4 flex items-center gap-2">
                     📺 Video Hướng Dẫn
                   </h2>
-                  <div className="aspect-video">
+                  <div className="relative w-full pb-[56.25%]">
                     <iframe 
-                      width="560" 
-                      height="315" 
+                      className="absolute top-0 left-0 w-full h-full rounded-lg"
                       src="https://www.youtube.com/embed/LhveTGblGHY?si=VIy-XGlQWtNTiMQJ" 
                       title="YouTube video player" 
                       frameBorder="0" 
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
                       allowFullScreen>
                     </iframe>
                   </div>
                 </div>
+                
               </div>
             </div>
           )}

@@ -1,5 +1,19 @@
+// React và hooks
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+// Styles
+import './App.css';
+
+// Custom components
+import { Button } from './components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from './components/ui/card';
+
+// Icons
 import { Book, HelpCircle } from 'lucide-react';
 
 const EnglishReview = () => {

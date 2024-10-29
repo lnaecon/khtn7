@@ -15,6 +15,7 @@ import {
   Microscope,
   Grid,
   Lightbulb,
+  Molecule,
 } from 'lucide-react'; // Imported necessary icons
 
 const EnglishReview = () => {
@@ -33,12 +34,12 @@ const EnglishReview = () => {
       <Card className="mb-8">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-bold text-blue-600">
-            Ôn tập Tiếng Anh lớp 7
+            Ôn tập KHTN lớp 7
           </CardTitle>
         </CardHeader>
         
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-4 gap-4">
             <button
               onClick={() => toggleSection('atom')}
               className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
@@ -69,7 +70,286 @@ const EnglishReview = () => {
               <Grid size={20} />
               {activeSection === 'periodicTable' ? 'Đóng' : 'Bảng Tuần Hoàn'}
             </button>
+            <button
+              onClick={() => toggleSection('molecule')}
+              className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
+                ${activeSection === 'molecule'
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
+            >
+              <Molecule size={20} />
+              {activeSection === 'molecule' ? 'Đóng' : 'Phân Tử'}
+            </button>
           </div>
+
+          {/* Periodic Table Section */}
+          {activeSection === 'periodicTable' && (
+            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
+              <div className="space-y-6">
+                {/* Section: BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HÓA HỌC */}
+                <div className="p-6 rounded-lg shadow-sm bg-blue-50">
+                  {/* Content for the Periodic Table Section */}
+                  {/* ... (existing content) */}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Molecule Section */}
+          {activeSection === 'molecule' && (
+            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
+              <div className="space-y-6">
+                {/* Section: PHÂN TỬ - ĐƠN CHẤT - HỢP CHẤT */}
+                <div className="p-6 rounded-lg shadow-sm bg-blue-50">
+                  <h2 className="text-2xl font-semibold text-red-600 flex items-center gap-2 mb-4">
+                    <Molecule size={24} className="text-red-500" />
+                    PHÂN TỬ - ĐƠN CHẤT - HỢP CHẤT
+                  </h2>
+
+                  {/* I. Kiến thức trọng tâm */}
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">I. Kiến thức trọng tâm</h3>
+
+                    {/* 1. Đơn chất */}
+                    <div className="mb-4 bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <Atom size={20} />
+                        1. Đơn chất
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Khái niệm:</strong> Chất được tạo nên từ một nguyên tố hóa học
+                        </li>
+                        <li>
+                          <strong>Đặc điểm:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Một nguyên tố có thể tạo nhiều dạng đơn chất</li>
+                            <li>Ví dụ: Carbon tạo thành than chì, kim cương</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Phân loại:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Kim loại: Thường ở thể rắn (trừ thủy ngân)</li>
+                            <li>Phi kim: Có thể ở rắn, lỏng, khí</li>
+                            <li>Khí hiếm: Luôn ở thể khí</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 2. Hợp chất */}
+                    <div className="mb-4 bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <TestTube size={20} />
+                        2. Hợp chất
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Khái niệm:</strong> Chất được tạo nên từ hai hay nhiều nguyên tố
+                        </li>
+                        <li>
+                          <strong>Phân loại:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Hợp chất 2 nguyên tố: H₂O, CO₂</li>
+                            <li>Hợp chất 3 nguyên tố: CaCO₃ (đá vôi)</li>
+                            <li>Hợp chất đa nguyên tố: Protein</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Theo bản chất:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Vô cơ: Muối ăn, nước, CO₂</li>
+                            <li>Hữu cơ: Glucose, protein</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 3. Phân tử */}
+                    <div className="bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <Molecule size={20} />
+                        3. Phân tử
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Khái niệm:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Hạt đại diện cho chất</li>
+                            <li>Gồm các nguyên tử liên kết</li>
+                            <li>Thể hiện đầy đủ tính chất của chất</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Khối lượng phân tử:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Đơn vị: amu</li>
+                            <li>= Tổng khối lượng các nguyên tử</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* II. Thông tin thú vị và ứng dụng */}
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">II. Thông tin thú vị và ứng dụng</h3>
+
+                    {/* 1. Đơn chất kỳ diệu */}
+                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        1. Đơn chất kỳ diệu
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Kim cương và than chì:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Cùng là carbon nhưng:</li>
+                            <li>Kim cương: Cứng nhất tự nhiên</li>
+                            <li>Than chì: Mềm đến mức viết được</li>
+                            <li>Lý do: Cấu trúc liên kết khác nhau</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Thủy ngân:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Kim loại duy nhất lỏng ở nhiệt độ thường</li>
+                            <li>Từng dùng trong nhiệt kế (nay bị cấm vì độc)</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 2. Hợp chất trong đời sống */}
+                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        2. Hợp chất trong đời sống
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>🌊 Nước (H₂O):</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Duy nhất tồn tại ở 3 thể</li>
+                            <li>Nhẹ hơn khi đông đá (nên băng nổi)</li>
+                            <li>Không có nước = không có sự sống</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>🍬 Đường (C₁₂H₂₂O₁₁):</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Tạo năng lượng cho cơ thể</li>
+                            <li>Có nhiều dạng: glucose, fructose, saccharose</li>
+                            <li>Công thức hóa học giống hệt nhau nhưng cấu trúc khác = vị ngọt khác nhau</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* III. Câu hỏi tự luyện tập */}
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">III. Câu hỏi tự luyện tập</h3>
+
+                    {/* Câu hỏi */}
+                    <div className="mb-4 bg-purple-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Câu hỏi</h4>
+                      <ol className="list-decimal list-inside space-y-2">
+                        <li>Tại sao cùng là carbon nhưng kim cương lại cứng còn than chì lại mềm?</li>
+                        <li>Làm sao phân biệt được đơn chất và hợp chất?</li>
+                        <li>Tính khối lượng phân tử của nước (H₂O) và carbon dioxide (CO₂)?</li>
+                        <li>Tại sao hợp chất trong tự nhiên nhiều hơn đơn chất rất nhiều?</li>
+                      </ol>
+                    </div>
+
+                    {/* Đáp án */}
+                    <div className="bg-purple-50 p-4 rounded-lg text-sm">
+                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Đáp án</h4>
+                      <ol className="list-decimal list-inside space-y-4">
+                        <li>
+                          <strong>Kim cương và than chì:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Khác nhau về cấu trúc liên kết</li>
+                            <li>Kim cương: Liên kết 3D chặt chẽ</li>
+                            <li>Than chì: Liên kết theo lớp, dễ trượt</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Phân biệt qua:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Thành phần nguyên tố</li>
+                            <li>Đơn chất: 1 nguyên tố</li>
+                            <li>Hợp chất: ≥ 2 nguyên tố</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Tính khối lượng:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>H₂O = 2×1 + 16 = 18 amu</li>
+                            <li>CO₂ = 12 + 2×16 = 44 amu</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Hợp chất nhiều hơn vì:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Có nhiều cách kết hợp nguyên tố</li>
+                            <li>Tỷ lệ kết hợp đa dạng</li>
+                            <li>Cấu trúc không gian phong phú</li>
+                          </ul>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  {/* 💡 Mẹo học tập */}
+                  <div className="mt-6 bg-yellow-50 p-4 rounded-lg">
+                    <h4 className="text-lg font-semibold text-yellow-600 flex items-center gap-2 mb-2">
+                      <Lightbulb size={20} />
+                      💡 Mẹo học tập
+                    </h4>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>
+                        Liên hệ với vật xung quanh:
+                        <ul className="list-disc list-inside ml-5 space-y-1">
+                          <li>Đơn chất: Dây đồng, vòng vàng</li>
+                          <li>Hợp chất: Nước uống, muối ăn</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Tưởng tượng phân tử như xếp hình:
+                        <ul className="list-disc list-inside ml-5 space-y-1">
+                          <li>Nguyên tử = miếng ghép</li>
+                          <li>Phân tử = mô hình hoàn chỉnh</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Học qua thí nghiệm đơn giản:
+                        <ul className="list-disc list-inside ml-5 space-y-1">
+                          <li>Quan sát đá vôi tác dụng giấm</li>
+                          <li>Xem nước đá tan chảy</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Embedded YouTube Video */}
+                  <div className="mt-6">
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/C0Qaf-UJ2XQ?si=LmI7RQQmpWkV17-h"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Periodic Table Section */}
           {activeSection === 'periodicTable' && (

@@ -1,10 +1,6 @@
-// React và hooks
 import React, { useState } from 'react';
-
-// Styles
 import './App.css';
 
-// Custom components
 import { Button } from './components/ui/button';
 import {
   Card,
@@ -13,12 +9,20 @@ import {
   CardTitle,
 } from './components/ui/card';
 
-// Icons
-import { Book, HelpCircle, Volume2 } from 'lucide-react';
-
+import { 
+  Book, 
+  HelpCircle, 
+  Volume2, 
+  BookOpen,
+  Heart,
+  Bike,
+  Users,
+  HandHeart,
+  Star
+} from 'lucide-react';
 
 const EnglishReview = () => {
-  const [activeSection, setActiveSection] = useState('none'); // 'none', 'phonetics', or 'guide'
+  const [activeSection, setActiveSection] = useState('none');
 
   const toggleSection = (section) => {
     if (activeSection === section) {
@@ -38,7 +42,7 @@ const EnglishReview = () => {
         </CardHeader>
         
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             <button
               onClick={() => toggleSection('phonetics')}
               className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
@@ -46,8 +50,19 @@ const EnglishReview = () => {
                   ? 'bg-blue-600 text-white' 
                   : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
             >
-              <Book size={20} />
+              <Volume2 size={20} />
               {activeSection === 'phonetics' ? 'Đóng' : 'Ngữ Âm'}
+            </button>
+
+            <button
+              onClick={() => toggleSection('vocabulary')}
+              className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
+                ${activeSection === 'vocabulary'
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
+            >
+              <BookOpen size={20} />
+              {activeSection === 'vocabulary' ? 'Đóng' : 'Từ Vựng'}
             </button>
 
             <button
@@ -61,6 +76,117 @@ const EnglishReview = () => {
               {activeSection === 'guide' ? 'Đóng' : 'Hướng Dẫn'}
             </button>
           </div>
+
+          {activeSection === 'vocabulary' && (
+            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
+              <div className="space-y-6">
+                {/* Hobbies Section */}
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h2 className="text-xl font-semibold text-purple-600 flex items-center gap-2 mb-4">
+                    <Heart className="text-purple-500" size={24} />
+                    Sở Thích (Hobbies)
+                  </h2>
+                  
+                  <div className="grid gap-4">
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                      <h3 className="font-medium text-purple-600 mb-2">🎨 Các hoạt động sở thích</h3>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="p-2">• building dollhouses</div>
+                        <div className="p-2">• riding a horse</div>
+                        <div className="p-2">• collecting teddy bears</div>
+                        <div className="p-2">• making models</div>
+                        <div className="p-2">• gardening</div>
+                        <div className="p-2">• jogging</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                      <h3 className="font-medium text-purple-600 mb-2">✨ Tính từ và danh từ liên quan</h3>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="p-2">• amazing (tuyệt vời)</div>
+                        <div className="p-2">• creative (sáng tạo)</div>
+                        <div className="p-2">• unusual (khác thường)</div>
+                        <div className="p-2">• popular (phổ biến)</div>
+                        <div className="p-2">• valuable (có giá trị)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Healthy Living Section */}
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h2 className="text-xl font-semibold text-green-600 flex items-center gap-2 mb-4">
+                    <Bike className="text-green-500" size={24} />
+                    Lối Sống Lành Mạnh (Healthy Living)
+                  </h2>
+
+                  <div className="grid gap-4">
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <h3 className="font-medium text-green-600 mb-2">🏃‍♂️ Hoạt động lành mạnh</h3>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="p-2">• boating (chèo thuyền)</div>
+                        <div className="p-2">• wear suncream (bôi kem chống nắng)</div>
+                        <div className="p-2">• go cycling (đạp xe)</div>
+                        <div className="p-2">• keep fit (giữ dáng)</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <h3 className="font-medium text-green-600 mb-2">🥗 Thực phẩm lành mạnh</h3>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="p-2">• vegetables (rau củ)</div>
+                        <div className="p-2">• healthy diet (chế độ ăn)</div>
+                        <div className="p-2">• vitamins (vitamin)</div>
+                        <div className="p-2">• minerals (khoáng chất)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Community Service Section */}
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h2 className="text-xl font-semibold text-orange-600 flex items-center gap-2 mb-4">
+                    <HandHeart className="text-orange-500" size={24} />
+                    Cộng Đồng (Community Service)
+                  </h2>
+
+                  <div className="grid gap-4">
+                    <div className="bg-orange-50 p-4 rounded-lg">
+                      <h3 className="font-medium text-orange-600 mb-2">🌟 Hoạt động cộng đồng</h3>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="p-2">• pick up litter (nhặt rác)</div>
+                        <div className="p-2">• plant vegetables (trồng rau)</div>
+                        <div className="p-2">• donate (quyên góp)</div>
+                        <div className="p-2">• recycle (tái chế)</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-orange-50 p-4 rounded-lg">
+                      <h3 className="font-medium text-orange-600 mb-2">💝 Cách khen ngợi</h3>
+                      <div className="p-2 space-y-2">
+                        <div>• "Sounds like great work!" (Nghe có vẻ tuyệt vời!)</div>
+                        <div>• "Wonderful!" (Tuyệt vời!)</div>
+                        <div>• "That's amazing!" (Thật tuyệt!)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h3 className="font-medium text-blue-600 flex items-center gap-2">
+                    <Star size={20} />
+                    Mẹo học từ vựng
+                  </h3>
+                  <ul className="mt-2 space-y-2">
+                    <li>• Tạo câu với từ mới để dễ nhớ hơn</li>
+                    <li>• Nhóm các từ cùng chủ đề để học hiệu quả</li>
+                    <li>• Luyện tập sử dụng từ mới mỗi ngày</li>
+                    <li>• Tạo flashcard với hình ảnh minh họa</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
 
           {activeSection === 'phonetics' && (
             <>

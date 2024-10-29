@@ -39,16 +39,6 @@ const EnglishReview = () => {
         <CardContent className="space-y-4">
           <div className="grid grid-cols-3 gap-4">
             <button
-              onClick={() => toggleSection('phonetics')}
-              className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
-                ${activeSection === 'phonetics'
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
-            >
-              <Volume2 size={20} />
-              {activeSection === 'phonetics' ? 'Đóng' : 'Ngữ Âm'}
-            </button>
-            <button
               onClick={() => toggleSection('atom')}
               className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
                 ${activeSection === 'atom'
@@ -57,6 +47,16 @@ const EnglishReview = () => {
             >
               <Atom size={20} />
               {activeSection === 'atom' ? 'Đóng' : 'Nguyên Tử'}
+            </button>
+            <button
+              onClick={() => toggleSection('element')}
+              className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
+                ${activeSection === 'element'
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
+            >
+              <TestTube size={20} />
+              {activeSection === 'element' ? 'Đóng' : 'Nguyên Tố'}
             </button>
             <button
               onClick={() => toggleSection('grammar')}
@@ -69,6 +69,170 @@ const EnglishReview = () => {
               {activeSection === 'grammar' ? 'Đóng' : 'Ngữ Pháp'}
             </button>
           </div>
+
+          {/* Element Section */}
+          {activeSection === 'element' && (
+            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
+              <div className="space-y-6">
+                {/* Section: NGUYÊN TỐ HÓA HỌC - KHÁI NIỆM CƠ BẢN */}
+                <div className="p-6 rounded-lg shadow-sm bg-blue-50">
+                  <h2 className="text-2xl font-semibold text-red-600 flex items-center gap-2 mb-4">
+                    <TestTube size={24} className="text-red-500" />
+                    NGUYÊN TỐ HÓA HỌC - KHÁI NIỆM CƠ BẢN
+                  </h2>
+
+                  {/* I. Kiến thức trọng tâm */}
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">I. Kiến thức trọng tâm</h3>
+
+                    {/* 1. Khái niệm nguyên tố hóa học */}
+                    <div className="mb-4 bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <TestTube size={20} />
+                        1. Khái niệm nguyên tố hóa học
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Nguyên tố hóa học là tập hợp các nguyên tử có cùng số proton trong hạt nhân</li>
+                        <li>Mỗi nguyên tố có số hiệu nguyên tử riêng, chính là số proton trong hạt nhân</li>
+                        <li>Các nguyên tử cùng nguyên tố có thể có số neutron khác nhau</li>
+                        <li>Hiện nay đã phát hiện được 118 nguyên tố hóa học</li>
+                      </ul>
+                    </div>
+
+                    {/* 2. Tên gọi và ký hiệu hóa học */}
+                    <div className="mb-4 bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <Microscope size={20} />
+                        2. Tên gọi và ký hiệu hóa học
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Tên gọi:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Một số có từ thời cổ đại: vàng, bạc, sắt...</li>
+                            <li>Một số mới phát hiện gần đây: rutherfordium, bohrium...</li>
+                            <li>Được quy định thống nhất theo IUPAC</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Ký hiệu hóa học:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Gồm 1-2 chữ cái từ tên nguyên tố</li>
+                            <li>Chữ đầu viết hoa, chữ sau viết thường</li>
+                            <li>Một số dựa trên tên Latin (Na - natrium, K - kalium)</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 3. Nguyên tố trong tự nhiên */}
+                    <div className="bg-white p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        3. Nguyên tố trong tự nhiên
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>
+                          <strong>Trong cơ thể người:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>4 nguyên tố chính (96%): C, O, H, N</li>
+                            <li>Các nguyên tố phụ (4%): P, S, Ca, K</li>
+                            <li>Nguyên tố vi lượng: Fe, I...</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Trong không khí:</strong>
+                          <ul className="list-disc list-inside ml-5 space-y-1">
+                            <li>Nitrogen (N<sub>2</sub>)</li>
+                            <li>Oxygen (O<sub>2</sub>)</li>
+                            <li>Các khí hiếm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* II. Thông tin thú vị và ứng dụng thực tế */}
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">II. Thông tin thú vị và ứng dụng thực tế</h3>
+
+                    {/* 1. Ứng dụng trong đời sống */}
+                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        1. Ứng dụng trong đời sống
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Thành phần thực phẩm, thuốc</li>
+                        <li>Vật liệu xây dựng</li>
+                        <li>Công nghiệp sản xuất</li>
+                        <li>Y học và điều trị</li>
+                      </ul>
+                    </div>
+
+                    {/* 2. Những con số thú vị */}
+                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
+                        <Lightbulb size={20} />
+                        2. Những con số thú vị
+                      </h4>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Hydrogen là nguyên tố nhẹ nhất</li>
+                        <li>Oxygen chiếm 65% khối lượng cơ thể người</li>
+                        <li>Iodine cần 0.15mg/ngày cho tuyến giáp</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* III. Câu hỏi tự luyện tập và đáp án */}
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">III. Câu hỏi tự luyện tập và đáp án</h3>
+
+                    {/* Câu hỏi */}
+                    <div className="mb-4 bg-purple-50 p-4 rounded-lg">
+                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Câu hỏi</h4>
+                      <ol className="list-decimal list-inside space-y-2">
+                        <li>Thế nào là nguyên tố hóa học?</li>
+                        <li>Tại sao các nguyên tử có số neutron khác nhau vẫn thuộc cùng một nguyên tố?</li>
+                        <li>Oxygen có số hiệu nguyên tử là 8, số proton trong hạt nhân là bao nhiêu?</li>
+                        <li>Kể tên các nguyên tố chính trong cơ thể người?</li>
+                      </ol>
+                    </div>
+
+                    {/* Đáp án */}
+                    <div className="bg-purple-50 p-4 rounded-lg text-sm">
+                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Đáp án</h4>
+                      <ol className="list-decimal list-inside space-y-4">
+                        <li>Nguyên tố hóa học là tập hợp các nguyên tử có cùng số proton trong hạt nhân.</li>
+                        <li>Vì số proton quyết định bản chất nguyên tố, không phụ thuộc số neutron.</li>
+                        <li>Số proton = số hiệu nguyên tử = 8.</li>
+                        <li>Carbon (C), Oxygen (O), Hydrogen (H), Nitrogen (N) chiếm 96% khối lượng cơ thể.</li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  {/* Video Section */}
+                  <div className="mt-8">
+                    <h2 className="text-xl font-semibold text-blue-600 mb-4 flex items-center gap-2">
+                      📺 Video Hướng Dẫn
+                    </h2>
+                    <div className="aspect-video">
+                      <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/fPnwBITSmgU?si=fdBcQOT-mMquZWgo" 
+                        title="YouTube video player" 
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerPolicy="strict-origin-when-cross-origin" 
+                        allowFullScreen>
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Atom Section */}
           {activeSection === 'atom' && (
@@ -356,171 +520,6 @@ const EnglishReview = () => {
                       referrerPolicy="strict-origin-when-cross-origin" 
                       allowFullScreen>
                     </iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          
-          {/* Element Section */}
-          {activeSection === 'element' && (
-            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
-              <div className="space-y-6">
-                {/* Section: NGUYÊN TỐ HÓA HỌC - KHÁI NIỆM CƠ BẢN */}
-                <div className="p-6 rounded-lg shadow-sm bg-blue-50">
-                  <h2 className="text-2xl font-semibold text-red-600 flex items-center gap-2 mb-4">
-                    <TestTube size={24} className="text-red-500" />
-                    NGUYÊN TỐ HÓA HỌC - KHÁI NIỆM CƠ BẢN
-                  </h2>
-
-                  {/* I. Kiến thức trọng tâm */}
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">I. Kiến thức trọng tâm</h3>
-
-                    {/* 1. Khái niệm nguyên tố hóa học */}
-                    <div className="mb-4 bg-white p-4 rounded-lg">
-                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
-                        <TestTube size={20} />
-                        1. Khái niệm nguyên tố hóa học
-                      </h4>
-                      <ul className="list-disc list-inside space-y-2">
-                        <li>Nguyên tố hóa học là tập hợp các nguyên tử có cùng số proton trong hạt nhân</li>
-                        <li>Mỗi nguyên tố có số hiệu nguyên tử riêng, chính là số proton trong hạt nhân</li>
-                        <li>Các nguyên tử cùng nguyên tố có thể có số neutron khác nhau</li>
-                        <li>Hiện nay đã phát hiện được 118 nguyên tố hóa học</li>
-                      </ul>
-                    </div>
-
-                    {/* 2. Tên gọi và ký hiệu hóa học */}
-                    <div className="mb-4 bg-white p-4 rounded-lg">
-                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
-                        <Microscope size={20} />
-                        2. Tên gọi và ký hiệu hóa học
-                      </h4>
-                      <ul className="list-disc list-inside space-y-2">
-                        <li>
-                          <strong>Tên gọi:</strong>
-                          <ul className="list-disc list-inside ml-5 space-y-1">
-                            <li>Một số có từ thời cổ đại: vàng, bạc, sắt...</li>
-                            <li>Một số mới phát hiện gần đây: rutherfordium, bohrium...</li>
-                            <li>Được quy định thống nhất theo IUPAC</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <strong>Ký hiệu hóa học:</strong>
-                          <ul className="list-disc list-inside ml-5 space-y-1">
-                            <li>Gồm 1-2 chữ cái từ tên nguyên tố</li>
-                            <li>Chữ đầu viết hoa, chữ sau viết thường</li>
-                            <li>Một số dựa trên tên Latin (Na - natrium, K - kalium)</li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* 3. Nguyên tố trong tự nhiên */}
-                    <div className="bg-white p-4 rounded-lg">
-                      <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
-                        <Lightbulb size={20} />
-                        3. Nguyên tố trong tự nhiên
-                      </h4>
-                      <ul className="list-disc list-inside space-y-2">
-                        <li>
-                          <strong>Trong cơ thể người:</strong>
-                          <ul className="list-disc list-inside ml-5 space-y-1">
-                            <li>4 nguyên tố chính (96%): C, O, H, N</li>
-                            <li>Các nguyên tố phụ (4%): P, S, Ca, K</li>
-                            <li>Nguyên tố vi lượng: Fe, I...</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <strong>Trong không khí:</strong>
-                          <ul className="list-disc list-inside ml-5 space-y-1">
-                            <li>Nitrogen (N<sub>2</sub>)</li>
-                            <li>Oxygen (O<sub>2</sub>)</li>
-                            <li>Các khí hiếm</li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* II. Thông tin thú vị và ứng dụng thực tế */}
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">II. Thông tin thú vị và ứng dụng thực tế</h3>
-
-                    {/* 1. Ứng dụng trong đời sống */}
-                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
-                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
-                        <Lightbulb size={20} />
-                        1. Ứng dụng trong đời sống
-                      </h4>
-                      <ul className="list-disc list-inside space-y-2">
-                        <li>Thành phần thực phẩm, thuốc</li>
-                        <li>Vật liệu xây dựng</li>
-                        <li>Công nghiệp sản xuất</li>
-                        <li>Y học và điều trị</li>
-                      </ul>
-                    </div>
-
-                    {/* 2. Những con số thú vị */}
-                    <div className="mb-4 bg-green-50 p-4 rounded-lg">
-                      <h4 className="text-lg font-semibold text-green-600 flex items-center gap-2 mb-2">
-                        <Lightbulb size={20} />
-                        2. Những con số thú vị
-                      </h4>
-                      <ul className="list-disc list-inside space-y-2">
-                        <li>Hydrogen là nguyên tố nhẹ nhất</li>
-                        <li>Oxygen chiếm 65% khối lượng cơ thể người</li>
-                        <li>Iodine cần 0.15mg/ngày cho tuyến giáp</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* III. Câu hỏi tự luyện tập và đáp án */}
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">III. Câu hỏi tự luyện tập và đáp án</h3>
-
-                    {/* Câu hỏi */}
-                    <div className="mb-4 bg-purple-50 p-4 rounded-lg">
-                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Câu hỏi</h4>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>Thế nào là nguyên tố hóa học?</li>
-                        <li>Tại sao các nguyên tử có số neutron khác nhau vẫn thuộc cùng một nguyên tố?</li>
-                        <li>Oxygen có số hiệu nguyên tử là 8, số proton trong hạt nhân là bao nhiêu?</li>
-                        <li>Kể tên các nguyên tố chính trong cơ thể người?</li>
-                      </ol>
-                    </div>
-
-                    {/* Đáp án */}
-                    <div className="bg-purple-50 p-4 rounded-lg text-sm">
-                      <h4 className="text-lg font-semibold text-indigo-600 mb-2">Đáp án</h4>
-                      <ol className="list-decimal list-inside space-y-4">
-                        <li>Nguyên tố hóa học là tập hợp các nguyên tử có cùng số proton trong hạt nhân.</li>
-                        <li>Vì số proton quyết định bản chất nguyên tố, không phụ thuộc số neutron.</li>
-                        <li>Số proton = số hiệu nguyên tử = 8.</li>
-                        <li>Carbon (C), Oxygen (O), Hydrogen (H), Nitrogen (N) chiếm 96% khối lượng cơ thể.</li>
-                      </ol>
-                    </div>
-                  </div>
-
-                  {/* Video Section */}
-                  <div className="mt-8">
-                    <h2 className="text-xl font-semibold text-blue-600 mb-4 flex items-center gap-2">
-                      📺 Video Hướng Dẫn
-                    </h2>
-                    <div className="aspect-video">
-                      <iframe 
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/fPnwBITSmgU?si=fdBcQOT-mMquZWgo" 
-                        title="YouTube video player" 
-                        frameBorder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerPolicy="strict-origin-when-cross-origin" 
-                        allowFullScreen>
-                      </iframe>
-                    </div>
                   </div>
                 </div>
               </div>

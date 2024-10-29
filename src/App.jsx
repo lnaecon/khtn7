@@ -13,6 +13,7 @@ import {
   BookText,
   TestTube,
   Microscope,
+  Grid,
   Lightbulb,
 } from 'lucide-react'; // Imported necessary icons
 

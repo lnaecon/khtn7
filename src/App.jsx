@@ -1,121 +1,122 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { Button } from './components/ui/button';
-import { Card, CardHeader, CardTitle, CardContent } from './components/ui/card';
-import './App.css';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Book, HelpCircle } from 'lucide-react';
 
-const App = () => {
-  const [isPhoneticOpen, setIsPhoneticOpen] = useState(false);
+const EnglishReview = () => {
+  const [showPhonetics, setShowPhonetics] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-gray-50">
-      <h1 className="text-3xl font-bold text-center mb-8 text-blue-800">
-        Ôn tập Tiếng Anh lớp 7 🎓
-      </h1>
+    <div className="max-w-4xl mx-auto p-4">
+      <Card className="mb-8">
+        <CardHeader className="text-center">
+          <CardTitle className="text-3xl font-bold text-blue-600">
+            Ôn tập Tiếng Anh lớp 7
+          </CardTitle>
+        </CardHeader>
+        
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <button
+              onClick={() => setShowPhonetics(!showPhonetics)}
+              className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
+                ${showPhonetics 
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
+            >
+              <Book size={20} />
+              {showPhonetics ? 'Close' : 'Phonetics'}
+            </button>
 
-      <Card>
-        <Button
-          onClick={() => setIsPhoneticOpen(!isPhoneticOpen)}
-          variant="default"
-          className="w-full flex items-center justify-between text-lg font-semibold rounded-t-lg hover:bg-blue-700 transition-colors"
-        >
-          <span>Phonetics {isPhoneticOpen ? "▼" : "▶"}</span>
-          {isPhoneticOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
-        </Button>
+            <button
+              onClick={() => setShowGuide(!showGuide)}
+              className={`p-4 rounded-lg flex items-center justify-center gap-2 transition-all
+                ${showGuide 
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
+            >
+              <HelpCircle size={20} />
+              {showGuide ? 'Close' : 'Guide'}
+            </button>
+          </div>
 
-        {isPhoneticOpen && (
-          <CardContent className="space-y-6">
-            <div className="space-y-4">
-              <h2 className="text-xl font-bold text-blue-800 mb-4">1. Nguyên âm (Vowels) 🗣️</h2>
+          {showPhonetics && (
+            <div className="mt-6 space-y-6 p-4 bg-gray-50 rounded-lg">
+              <div className="space-y-4">
+                <h2 className="text-xl font-semibold text-blue-600">
+                  🎵 Nguyên âm (Vowels)
+                </h2>
+                
+                <div className="pl-4 space-y-4">
+                  <div>
+                    <h3 className="font-medium text-blue-500">
+                      /ə/ - Âm "ơ" ngắn 
+                    </h3>
+                    <p>Phát âm giống như âm "ơ" trong tiếng Việt nhưng ngắn hơn và nhẹ hơn.</p>
+                    <div className="bg-blue-50 p-2 rounded mt-2">
+                      Ví dụ: <span className="font-semibold">collect</span> /kəˈlekt/, 
+                      <span className="font-semibold"> colour</span> /ˈkʌlə/, 
+                      <span className="font-semibold"> correct</span> /kəˈrekt/
+                    </div>
+                  </div>
 
-              <Card className="bg-blue-50">
-                <CardContent>
-                  <h3 className="font-bold text-blue-700 mb-2">Nguyên âm /ə/ (schwa)</h3>
-                  <p className="mb-2">
-                    🔊 Đây là âm ngắn, nhẹ, không căng, giống như khi bạn nói "ơ" rất nhẹ trong tiếng Việt
-                  </p>
-                  <Card className="bg-white">
-                    <CardContent>
-                      <p className="font-bold text-gray-700">Ví dụ:</p>
-                      <p><span className="text-blue-600 font-bold">collect</span> /kəˈlekt/</p>
-                      <p><span className="text-blue-600 font-bold">colour</span> /ˈkʌlə/</p>
-                      <p><span className="text-blue-600 font-bold">together</span> /təˈɡeðə/</p>
-                    </CardContent>
-                  </Card>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h3 className="font-medium text-blue-500">
+                      /ɜː/ - Âm "ơ" dài
+                    </h3>
+                    <p>Phát âm giống âm "ơ" trong tiếng Việt và kéo dài.</p>
+                    <div className="bg-blue-50 p-2 rounded mt-2">
+                      Ví dụ: <span className="font-semibold">nurse</span> /nɜːs/, 
+                      <span className="font-semibold"> bird</span> /bɜːd/, 
+                      <span className="font-semibold"> surf</span> /sɜːf/
+                    </div>
+                  </div>
+                </div>
 
-              <Card className="bg-blue-50">
-                <CardContent>
-                  <h3 className="font-bold text-blue-700 mb-2">Nguyên âm /ɜː/</h3>
-                  <p className="mb-2">
-                    🔊 Âm dài, giống như "ơ" kéo dài trong tiếng Việt
-                  </p>
-                  <Card className="bg-white">
-                    <CardContent>
-                      <p className="font-bold text-gray-700">Ví dụ:</p>
-                      <p><span className="text-blue-600 font-bold">nurse</span> /nɜːs/</p>
-                      <p><span className="text-blue-600 font-bold">bird</span> /bɜːd/</p>
-                      <p><span className="text-blue-600 font-bold">surfing</span> /ˈsɜːfɪŋ/</p>
-                    </CardContent>
-                  </Card>
-                </CardContent>
-              </Card>
+                <h2 className="text-xl font-semibold text-blue-600">
+                  🔊 Phụ âm (Consonants)
+                </h2>
+                
+                <div className="pl-4 space-y-4">
+                  <div>
+                    <h3 className="font-medium text-blue-500">
+                      /f/ - Âm "ph"
+                    </h3>
+                    <p>Đặt môi dưới chạm nhẹ răng trên và thổi hơi ra.</p>
+                    <div className="bg-blue-50 p-2 rounded mt-2">
+                      Ví dụ: <span className="font-semibold">flu</span> /fluː/, 
+                      <span className="font-semibold"> food</span> /fuːd/, 
+                      <span className="font-semibold"> face</span> /feɪs/
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="font-medium text-blue-500">
+                      /v/ - Âm "v"
+                    </h3>
+                    <p>Tương tự âm /f/ nhưng có rung dây thanh.</p>
+                    <div className="bg-blue-50 p-2 rounded mt-2">
+                      Ví dụ: <span className="font-semibold">vest</span> /vest/, 
+                      <span className="font-semibold"> save</span> /seɪv/, 
+                      <span className="font-semibold"> leave</span> /liːv/
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          )}
 
-            <div className="space-y-4">
-              <h2 className="text-xl font-bold text-blue-800 mb-4">2. Phụ âm (Consonants) 🎵</h2>
-
-              <Card className="bg-green-50">
-                <CardContent>
-                  <h3 className="font-bold text-green-700 mb-2">Phụ âm /f/</h3>
-                  <p className="mb-2">
-                    🔊 Đặt răng trên lên môi dưới và thổi hơi ra, không rung dây thanh
-                  </p>
-                  <Card className="bg-white">
-                    <CardContent>
-                      <p className="font-bold text-gray-700">Ví dụ:</p>
-                      <p><span className="text-green-600 font-bold">flu</span> /fluː/</p>
-                      <p><span className="text-green-600 font-bold">food</span> /fuːd/</p>
-                      <p><span className="text-green-600 font-bold">face</span> /feɪs/</p>
-                    </CardContent>
-                  </Card>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-green-50">
-                <CardContent>
-                  <h3 className="font-bold text-green-700 mb-2">Phụ âm /v/</h3>
-                  <p className="mb-2">
-                    🔊 Tương tự như /f/ nhưng có rung dây thanh (đặt tay lên cổ sẽ thấy rung)
-                  </p>
-                  <Card className="bg-white">
-                    <CardContent>
-                      <p className="font-bold text-gray-700">Ví dụ:</p>
-                      <p><span className="text-green-600 font-bold">vest</span> /vest/</p>
-                      <p><span className="text-green-600 font-bold">very</span> /ˈveri/</p>
-                      <p><span className="text-green-600 font-bold">save</span> /seɪv/</p>
-                    </CardContent>
-                  </Card>
-                </CardContent>
-              </Card>
+          {showGuide && (
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+              <p className="text-gray-700">
+                Hướng dẫn sử dụng trang này
+              </p>
             </div>
-
-            <Card className="bg-yellow-50">
-              <CardContent>
-                <h3 className="font-bold text-yellow-800">💡 Lưu ý:</h3>
-                <ul className="list-disc list-inside space-y-2 text-yellow-800">
-                  <li>Tập phát âm trước gương để xem vị trí miệng</li>
-                  <li>Nghe và bắt chước giọng phát âm chuẩn từ các ứng dụng học tiếng Anh</li>
-                  <li>Luyện tập thường xuyên với các từ ví dụ</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </CardContent>
-        )}
+          )}
+        </CardContent>
       </Card>
     </div>
   );
 };
 
-export default App;
+export default EnglishReview;

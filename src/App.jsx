@@ -145,7 +145,7 @@ const EnglishReview = () => {
                 {/* Community Service Section */}
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   <h2 className="text-xl font-semibold text-orange-600 flex items-center gap-2 mb-4">
-                    <HandHeart className="text-orange-500" size={24} />
+                    <Heart className="text-orange-500" size={24} />
                     Cộng Đồng (Community Service)
                   </h2>
 

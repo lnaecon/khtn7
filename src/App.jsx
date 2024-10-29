@@ -16,10 +16,6 @@ import {
 // Icons
 import { Book, HelpCircle } from 'lucide-react';
 
-import React, { useState } from 'react';
-import { Book, HelpCircle, Volume2 } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-
 const EnglishReview = () => {
   const [showPhonetics, setShowPhonetics] = useState(false);
   const [showGuide, setShowGuide] = useState(false);

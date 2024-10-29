@@ -22,7 +22,6 @@ import {
   TestTube,
   Microscope,
   Lightbulb,
-  Chemistry,
   Chemistry2,
 } from 'lucide-react'; // Added Atom and other icons
 
@@ -95,7 +94,7 @@ const EnglishReview = () => {
                 {/* Section I: Kiến thức trọng tâm */}
                 <div className="bg-white p-6 rounded-lg shadow-sm">
                   <h2 className="text-2xl font-semibold text-red-600 flex items-center gap-2 mb-4">
-                    <Chemistry size={24} className="text-red-500" />
+                    <Chemistry2 size={24} className="text-red-500" />
                     NGUYÊN TỬ - TỪ VI MÔ ĐẾN VĨ MÔ
                   </h2>
 

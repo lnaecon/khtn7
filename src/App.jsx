@@ -15,7 +15,6 @@ import {
   Microscope,
   Grid,
   Lightbulb,
-  Molecule,
 } from 'lucide-react'; // Imported necessary icons
 
 const EnglishReview = () => {
@@ -77,7 +76,7 @@ const EnglishReview = () => {
                   ? 'bg-blue-600 text-white' 
                   : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
             >
-              <Molecule size={20} />
+              <Atom size={20} />
               {activeSection === 'molecule' ? 'Đóng' : 'Phân Tử'}
             </button>
           </div>
@@ -102,7 +101,7 @@ const EnglishReview = () => {
                 {/* Section: PHÂN TỬ - ĐƠN CHẤT - HỢP CHẤT */}
                 <div className="p-6 rounded-lg shadow-sm bg-blue-50">
                   <h2 className="text-2xl font-semibold text-red-600 flex items-center gap-2 mb-4">
-                    <Molecule size={24} className="text-red-500" />
+                    <Atom size={24} className="text-red-500" />
                     PHÂN TỬ - ĐƠN CHẤT - HỢP CHẤT
                   </h2>
 
@@ -169,7 +168,7 @@ const EnglishReview = () => {
                     {/* 3. Phân tử */}
                     <div className="bg-white p-4 rounded-lg">
                       <h4 className="text-lg font-semibold text-blue-600 flex items-center gap-2 mb-2">
-                        <Molecule size={20} />
+                        <Atom size={20} />
                         3. Phân tử
                       </h4>
                       <ul className="list-disc list-inside space-y-2">
